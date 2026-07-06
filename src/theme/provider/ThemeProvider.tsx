@@ -8,12 +8,14 @@ import { themeColors } from '../themeColor';
 import { spacing } from '../spacing';
 import { rounded } from '../rounded';
 import { typography } from '../typography';
+import { themeImages } from '../images';
 
 type ThemeMode = 'light' | 'dark';
 
 interface ThemeContextProps {
   mode: ThemeMode;
   colors: typeof themeColors.light;
+  images: typeof themeImages.light;
   spacing: typeof spacing;
   rounded: typeof rounded;
   typography: typeof typography;
@@ -38,6 +40,7 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const currentColors = themeColors[mode];
+  const currentImages = themeImages[mode];
 
   if (!fontsLoaded) {
     return (
@@ -55,7 +58,15 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <ThemeContext.Provider
-      value={{ mode, colors: currentColors, spacing, rounded, typography, toggleTheme }}>
+      value={{
+        mode,
+        colors: currentColors,
+        images: currentImages,
+        spacing,
+        rounded,
+        typography,
+        toggleTheme,
+      }}>
       {children}
     </ThemeContext.Provider>
   );
