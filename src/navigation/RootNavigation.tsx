@@ -8,6 +8,9 @@ import { useTheme } from '../theme/provider/ThemeProvider';
 // Screens
 import SplashScreen from '../screens/SplashScreen';
 import LoginScreen from '../screens/auth/LoginScreen';
+import RegisterScreen from '../screens/auth/RegisterScreen';
+import ForgotPasswordScreen from '../screens/auth/ForgotPasswordScreen';
+import ResetPasswordScreen from '../screens/auth/ResetPasswordScreen';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -29,13 +32,22 @@ const RootNavigation = () => {
       <Stack.Navigator
         screenOptions={{
           headerShown: false,
-          animation: 'fade',
+          animation: 'slide_from_right',
           contentStyle: { backgroundColor: colors.background },
         }}>
         {isSplashActive ? (
-          <Stack.Screen name={ROUTES.SPLASH} component={SplashScreen} />
+          <Stack.Screen
+            name={ROUTES.SPLASH}
+            component={SplashScreen}
+            options={{ animation: 'fade' }}
+          />
         ) : (
-          <Stack.Screen name={ROUTES.LOGIN} component={LoginScreen} />
+          <>
+            <Stack.Screen name={ROUTES.LOGIN} component={LoginScreen} />
+            <Stack.Screen name={ROUTES.REGISTER} component={RegisterScreen} />
+            <Stack.Screen name={ROUTES.FORGOT_PASSWORD} component={ForgotPasswordScreen} />
+            <Stack.Screen name={ROUTES.RESET_PASSWORD} component={ResetPasswordScreen} />
+          </>
         )}
       </Stack.Navigator>
     </NavigationContainer>

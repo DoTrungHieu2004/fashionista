@@ -1,0 +1,63 @@
+import { StyleSheet } from 'react-native';
+
+export const styles = StyleSheet.create({
+  background: { flex: 1, justifyContent: 'center' },
+  card: {
+    borderRadius: 24,
+    padding: 24,
+    shadowColor: '#000', // Shadows for iOS
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.1,
+    shadowRadius: 10,
+    elevation: 5, // For Android
+    opacity: 0.9,
+  },
+  brandTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    fontFamily: 'MontserratBold',
+    textAlign: 'center',
+    marginBottom: 8,
+  },
+  headerTitle: {
+    fontSize: 24,
+    fontWeight: '700',
+    fontFamily: 'MontserratBold',
+    textAlign: 'center',
+    marginBottom: 8,
+  },
+  subtitle: { fontSize: 15, fontFamily: 'InterRegular', textAlign: 'center', marginBottom: 24 },
+  inputLabel: { fontSize: 14, fontWeight: '500', fontFamily: 'InterMedium', marginBottom: 8 },
+  forgotPass: { fontSize: 14, fontFamily: 'InterMedium', fontWeight: '500', marginBottom: 8 },
+  primaryButton: {
+    borderRadius: 10,
+    height: 52,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 8,
+    marginBottom: 16,
+  },
+  buttonText: { color: '#ffffff', fontSize: 16, fontWeight: '600', fontFamily: 'InterSemiBold' },
+  dividerContainer: { flexDirection: 'row', alignItems: 'center', marginVertical: 16, gap: 10 },
+  dividerLine: { flex: 1, height: 1 },
+  dividerText: { fontSize: 12, fontWeight: '500', fontFamily: 'InterMedium', letterSpacing: 1.2 },
+  socialContainer: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 20 },
+  socialButton: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderRadius: 10,
+    height: 50,
+    marginHorizontal: 6,
+  },
+  socialText: { fontSize: 14, fontWeight: '500', fontFamily: 'InterSemiBold', marginLeft: 8 },
+  footer: { flexDirection: 'row', justifyContent: 'center', marginTop: 4 },
+  footerText: { fontSize: 14, fontFamily: 'InterRegular' },
+  linkText: { fontSize: 14, fontWeight: '600', fontFamily: 'InterRegular' },
+  checkboxRow: { flexDirection: 'row', alignItems: 'flex-start', marginBottom: 16, gap: 10 },
+  checkbox: { marginTop: 2, width: 20, height: 20, borderRadius: 4 },
+  checkboxText: { flex: 1, fontSize: 12, fontFamily: 'InterRegular', lineHeight: 20 },
+  linkInLine: { fontWeight: '600', fontFamily: 'InterMedium' },
+});

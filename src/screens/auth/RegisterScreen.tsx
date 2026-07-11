@@ -11,32 +11,26 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
+import Checkbox from 'expo-checkbox';
 
-import { styles } from './styles';
 import { useTheme } from '../../theme/provider/ThemeProvider';
+import { styles } from './styles';
 import InputField from '../../components/InputField';
 
-const LoginScreen = () => {
+const RegisterScreen = () => {
   const { colors, images } = useTheme();
   const navigation = useNavigation();
 
+  const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPass, setConfirmPass] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [errors, setErrors] = useState({ email: '', password: '' });
+  const [showConfirmPass, setShowConfirmPass] = useState(false);
+  const [agree, setAgree] = useState(false);
 
-  // Toggle password visibility
-  const togglePassword = () => setShowPassword(!showPassword);
-
-  const handleLogin = () => {
-    const newErrors = { email: '', password: '' };
-    if (!email) newErrors.email = 'Email is required';
-    if (!password) newErrors.password = 'Password is required';
-    setErrors(newErrors);
-
-    if (email && password) {
-      console.log('Login attempted');
-    }
+  const handleRegister = () => {
+    console.log('Registering user...');
   };
 
   return (
@@ -49,54 +43,79 @@ const LoginScreen = () => {
           behavior={Platform.OS === 'ios' ? 'padding' : undefined}
           style={{ flex: 1, justifyContent: 'center' }}>
           <ScrollView
-            contentContainerStyle={{
-              padding: 20,
-              flexGrow: 1,
-              justifyContent: 'center',
-            }}>
+            contentContainerStyle={{ padding: 20, flexGrow: 1, justifyContent: 'center' }}>
             {/* Middle transparent / White container */}
             <View style={[styles.card, { backgroundColor: colors.surfaceContainerLowest }]}>
-              <Text style={[styles.brandTitle, { color: colors.primary }]}>Fashionista</Text>
-              <Text style={[styles.headerTitle, { color: colors.onSurface }]}>Welcome back</Text>
+              <Text style={[styles.headerTitle, { color: colors.onSurface }]}>Create account</Text>
               <Text style={[styles.subtitle, { color: colors.onSurfaceVariant }]}>
-                Discover the latest trends in luxury fashion.
+                Join our global fashion community and discover curated collection.
               </Text>
 
               {/* Inputs */}
               <InputField
-                label="Email address"
+                label="Full name"
+                value={fullName}
+                onChangeText={setFullName}
+                placeholder="Your full name"
+                autoCapitalize="words"
+                iconName="user"
+                iconLibrary="Feather"
+              />
+              <InputField
+                label="Email"
                 value={email}
                 onChangeText={setEmail}
                 placeholder="name@example.com"
-                error={errors.email}
+                iconName="mail"
+                iconLibrary="Feather"
               />
-
-              <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                <Text style={[styles.inputLabel, { color: colors.onSurfaceVariant }]}>
-                  Password
-                </Text>
-                <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword' as never)}>
-                  <Text style={[styles.forgotPass, { color: colors.primary }]}>
-                    Forgot password?
-                  </Text>
-                </TouchableOpacity>
-              </View>
               <InputField
-                label=""
+                label="Password"
                 value={password}
                 onChangeText={setPassword}
                 placeholder="••••••••"
                 secureTextEntry={!showPassword}
                 iconName={showPassword ? 'eye' : 'eye-off'}
-                iconLibrary="Feather"
-                onIconPress={togglePassword}
+                onIconPress={() => setShowPassword(!showPassword)}
+              />
+              <InputField
+                label="Confirm password"
+                value={confirmPass}
+                onChangeText={setConfirmPass}
+                placeholder="••••••••"
+                secureTextEntry={!showConfirmPass}
+                iconName="repeat" // Using repeat icon from Ionicons
+                iconLibrary="Ionicons"
+                onIconPress={() => setShowConfirmPass(!showConfirmPass)}
               />
 
-              {/* Login button */}
+              {/* Checkbox agreement */}
+              <TouchableOpacity
+                style={styles.checkboxRow}
+                onPress={() => setAgree(!agree)}
+                activeOpacity={0.7}>
+                <Checkbox
+                  value={agree}
+                  onValueChange={setAgree}
+                  color={agree ? colors.primaryContainer : undefined}
+                  style={styles.checkbox}
+                />
+                <Text style={[styles.checkboxText, { color: colors.onSurfaceVariant }]}>
+                  By registering, I agree to Fashionista's{' '}
+                  <Text style={[styles.linkInLine, { color: colors.primary }]}>
+                    Terms of Service
+                  </Text>{' '}
+                  and{' '}
+                  <Text style={[styles.linkInLine, { color: colors.primary }]}>Privacy Policy</Text>
+                  .
+                </Text>
+              </TouchableOpacity>
+
+              {/* Register button */}
               <TouchableOpacity
                 style={[styles.primaryButton, { backgroundColor: colors.primary }]}
-                onPress={handleLogin}>
-                <Text style={styles.buttonText}>Login</Text>
+                onPress={handleRegister}>
+                <Text style={styles.buttonText}>Register</Text>
               </TouchableOpacity>
 
               {/* Divider */}
@@ -138,11 +157,10 @@ const LoginScreen = () => {
               {/* Footer */}
               <View style={styles.footer}>
                 <Text style={[styles.footerText, { color: colors.onSurfaceVariant }]}>
-                  {' '}
                   Don't have an account?{' '}
                 </Text>
-                <TouchableOpacity onPress={() => navigation.navigate('Register' as never)}>
-                  <Text style={[styles.linkText, { color: colors.primary }]}>Register</Text>
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                  <Text style={[styles.linkText, { color: colors.primary }]}>Login</Text>
                 </TouchableOpacity>
               </View>
             </View>
@@ -153,4 +171,4 @@ const LoginScreen = () => {
   );
 };
 
-export default LoginScreen;
+export default RegisterScreen;

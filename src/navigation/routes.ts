@@ -3,7 +3,12 @@
  */
 export const ROUTES = {
   SPLASH: 'Splash',
+
+  // Authentication
   LOGIN: 'Login',
+  REGISTER: 'Register',
+  FORGOT_PASSWORD: 'ForgotPassword',
+  RESET_PASSWORD: 'ResetPassword',
 } as const;
 
 /**
@@ -12,4 +17,7 @@ export const ROUTES = {
 export type RootStackParamList = {
   [ROUTES.SPLASH]: undefined;
   [ROUTES.LOGIN]: undefined;
+  [ROUTES.REGISTER]: undefined;
+  [ROUTES.FORGOT_PASSWORD]: undefined;
+  [ROUTES.RESET_PASSWORD]: { email?: string } | undefined;
 };
