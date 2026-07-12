@@ -1,39 +1,64 @@
-import { families } from '../constants/theme/fontFamilies';
-import { sizes } from '../constants/theme/sizes';
+import { TextStyle } from 'react-native';
+
+export const families = {
+  headings: 'Montserrat',
+  body: 'Inter',
+};
 
 export const typography = {
   displayLg: {
     fontFamily: `${families.headings}_700Bold`,
-    fontSize: sizes.displayLg.size,
-    lineHeight: sizes.displayLg.height,
-    letterSpacing: -0.96,
+    fontSize: 48,
+    lineHeight: 56,
+    letterSpacing: 48 * -0.02,
   },
   headlineLg: {
     fontFamily: `${families.headings}_600SemiBold`,
-    fontSize: sizes.headlineLg.size,
-    lineHeight: sizes.headlineLg.height,
+    fontSize: 32,
+    lineHeight: 40,
   },
   headlineLgMobile: {
     fontFamily: `${families.headings}_600SemiBold`,
-    fontSize: sizes.headlineLgMobile.size,
-    lineHeight: sizes.headlineLgMobile.height,
+    fontSize: 28,
+    lineHeight: 36,
+  },
+  headlineMd: {
+    fontFamily: `${families.headings}_600SemiBold`,
+    fontSize: 24,
+    lineHeight: 32,
   },
   titleLg: {
     fontFamily: `${families.body}_600SemiBold`,
-    fontSize: sizes.xxl.size,
-    lineHeight: sizes.xxl.height,
+    fontSize: 20,
+    lineHeight: 28,
+  },
+  bodyLg: {
+    fontFamily: `${families.body}_400Regular`,
+    fontSize: 18,
+    lineHeight: 28,
   },
   bodyMd: {
     fontFamily: `${families.body}_400Regular`,
-    fontSize: sizes.lg.size,
-    lineHeight: sizes.lg.height,
+    fontSize: 16,
+    lineHeight: 24,
+  },
+  bodySm: {
+    fontFamily: `${families.body}_400Regular`,
+    fontSize: 14,
+    lineHeight: 20,
   },
   labelMd: {
     fontFamily: `${families.body}_500Medium`,
-    fontSize: sizes.sm.size,
-    lineHeight: sizes.sm.height,
-    letterSpacing: 0.6,
+    fontSize: 12,
+    lineHeight: 16,
+    letterSpacing: 12 * 0.05,
   },
-};
+  labelSm: {
+    fontFamily: `${families.body}_600SemiBold`,
+    fontSize: 10,
+    lineHeight: 14,
+    letterSpacing: 10 * 0.08,
+  },
+} as const satisfies Record<string, TextStyle>;
 
 export type TypographyType = typeof typography;
