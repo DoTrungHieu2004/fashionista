@@ -11,6 +11,7 @@ import LoginScreen from '../screens/auth/LoginScreen';
 import RegisterScreen from '../screens/auth/RegisterScreen';
 import ForgotPasswordScreen from '../screens/auth/ForgotPasswordScreen';
 import ResetPasswordScreen from '../screens/auth/ResetPasswordScreen';
+import MainTabs from './MainTabs';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -47,6 +48,11 @@ const RootNavigation = () => {
             <Stack.Screen name={ROUTES.REGISTER} component={RegisterScreen} />
             <Stack.Screen name={ROUTES.FORGOT_PASSWORD} component={ForgotPasswordScreen} />
             <Stack.Screen name={ROUTES.RESET_PASSWORD} component={ResetPasswordScreen} />
+            <Stack.Screen
+              name={ROUTES.MAIN_TABS}
+              component={MainTabs}
+              options={{ animation: 'fade' }}
+            />
           </>
         )}
       </Stack.Navigator>

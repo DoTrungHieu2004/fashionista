@@ -15,6 +15,7 @@ import { useNavigation } from '@react-navigation/native';
 import { styles } from './styles';
 import { useTheme } from '../../theme/provider/ThemeProvider';
 import InputField from '../../components/InputField';
+import { ROUTES } from '../../navigation/routes';
 
 const LoginScreen = () => {
   const { colors, images } = useTheme();
@@ -35,7 +36,12 @@ const LoginScreen = () => {
     setErrors(newErrors);
 
     if (email && password) {
-      console.log('Login attempted');
+      navigation.reset({
+        index: 0,
+        routes: [{ name: ROUTES.MAIN_TABS as never }],
+      });
+
+      console.log(`Login success! || Email: ${email}`);
     }
   };
 
