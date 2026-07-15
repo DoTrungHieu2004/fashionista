@@ -60,9 +60,14 @@ const ResetPasswordScreen = () => {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.background }}>
-      <TouchableOpacity onPress={() => navigation.goBack()} style={{ padding: 20 }}>
-        <Feather name="arrow-left" size={24} color={colors.onSurfaceVariant} />
-      </TouchableOpacity>
+      <View style={localStyles.headerContainer}>
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          style={localStyles.backButton}
+          activeOpacity={0.7}>
+          <Feather name="arrow-left" size={24} color={colors.onSurfaceVariant} />
+        </TouchableOpacity>
+      </View>
 
       <ScrollView contentContainerStyle={{ paddingHorizontal: 24, paddingBottom: 40 }}>
         {/* Hero image */}
@@ -198,6 +203,19 @@ const ResetPasswordScreen = () => {
 export default ResetPasswordScreen;
 
 const localStyles = StyleSheet.create({
+  headerContainer: {
+    width: '100%',
+    height: 60,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 0,
+  },
+  backButton: {
+    width: 60,
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   heroContainer: { height: 200, borderRadius: 16, overflow: 'hidden', position: 'relative' },
   heroGradient: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 },
   heroText: {
