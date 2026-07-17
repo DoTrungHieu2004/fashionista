@@ -3,7 +3,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { TAB_ROUTES, TabStackParamList } from './routes';
 import CustomTabBar from '../components/CustomTabBar';
+
 import PlaceholderScreen from '../screens/placeholder/PlaceholderScreen';
+import HomeScreen from '../screens/main/HomeScreen';
 
 const Tab = createBottomTabNavigator<TabStackParamList>();
 
@@ -12,9 +14,7 @@ const MainTabs = () => {
     <Tab.Navigator
       tabBar={props => <CustomTabBar {...props} />}
       screenOptions={{ headerShown: false }}>
-      <Tab.Screen name={TAB_ROUTES.HOME}>
-        {() => <PlaceholderScreen title="Editorial Feed" iconName="home" />}
-      </Tab.Screen>
+      <Tab.Screen name={TAB_ROUTES.HOME}>{() => <HomeScreen />}</Tab.Screen>
       <Tab.Screen name={TAB_ROUTES.MALL}>
         {() => <PlaceholderScreen title="The Essence Mall" iconName="shopping-bag" />}
       </Tab.Screen>
