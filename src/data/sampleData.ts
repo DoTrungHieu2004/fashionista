@@ -30,6 +30,21 @@ export interface RecentlyViewed {
   imageUrl: string;
 }
 
+export interface MallTrendingProduct {
+  id: string;
+  brand: string;
+  name: string;
+  price: string;
+  imageUrl: string;
+}
+
+export interface MallNewArrival {
+  id: string;
+  title: string;
+  tag?: string;
+  imageUrl: string;
+}
+
 export const categories: Category[] = [
   { id: '1', name: 'Women', iconUrl: 'https://cdn-icons-png.flaticon.com/512/2928/2928906.png' },
   { id: '2', name: 'Men', iconUrl: 'https://cdn-icons-png.flaticon.com/512/2928/2928906.png' },
@@ -110,4 +125,58 @@ export const recentlyViewed: RecentlyViewed[] = [
   { id: '2', imageUrl: 'https://images.unsplash.com/photo-1542834282-eac9b0df7125?w=200&q=80' }, // boots
   { id: '3', imageUrl: 'https://images.unsplash.com/photo-1599643478518-a55e0d1a4209?w=200&q=80' }, // pendant
   { id: '4', imageUrl: 'https://images.unsplash.com/photo-1582142337725-b852fcb628c7?w=200&q=80' }, // skirt
+];
+
+export const mallCategories = [
+  { id: '1', name: 'Women', iconUrl: 'https://cdn-icons-png.flaticon.com/512/2928/2928906.png' },
+  { id: '2', name: 'Men', iconUrl: 'https://cdn-icons-png.flaticon.com/512/2928/2928906.png' },
+  {
+    id: '3',
+    name: 'Accessories',
+    iconUrl: 'https://cdn-icons-png.flaticon.com/512/2928/2928906.png',
+  },
+  { id: '4', name: 'Shoes', iconUrl: 'https://cdn-icons-png.flaticon.com/512/2928/2928906.png' },
+];
+
+export const mallPopularBrands = [
+  { id: '1', name: 'LUXE', logoUrl: 'https://placehold.co/100x48/f3f3f3/333?text=LUXE' },
+  { id: '2', name: 'MODA', logoUrl: 'https://placehold.co/100x48/f3f3f3/333?text=MODA' },
+  { id: '3', name: 'VELVET', logoUrl: 'https://placehold.co/100x48/f3f3f3/333?text=VELVET' },
+  { id: '4', name: 'URBAN', logoUrl: 'https://placehold.co/100x48/f3f3f3/333?text=URBAN' },
+];
+
+export const mallTrendingNow: MallTrendingProduct[] = [
+  {
+    id: '1',
+    brand: 'VELVET & CO',
+    name: 'Tailored Silk Blazer',
+    price: '$249.00',
+    imageUrl: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&q=80',
+  },
+  {
+    id: '2',
+    brand: 'URBAN LUXE',
+    name: 'Classic Leather Tote',
+    price: '$185.00',
+    imageUrl: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&q=80',
+  },
+];
+
+export const mallNewArrivals: MallNewArrival[] = [
+  {
+    id: '1',
+    title: 'Artisanal Knits',
+    tag: 'LIMITED DROP',
+    imageUrl: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&q=80',
+  },
+  {
+    id: '2',
+    title: 'Modern Sunglasses',
+    imageUrl: 'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&q=80',
+  },
+  {
+    id: '3',
+    title: 'Linen Shirts',
+    imageUrl: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&q=80',
+  },
 ];

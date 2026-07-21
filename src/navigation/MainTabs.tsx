@@ -6,6 +6,7 @@ import CustomTabBar from '../components/CustomTabBar';
 
 import PlaceholderScreen from '../screens/placeholder/PlaceholderScreen';
 import HomeScreen from '../screens/main/HomeScreen';
+import MallScreen from '../screens/main/MallScreen';
 
 const Tab = createBottomTabNavigator<TabStackParamList>();
 
@@ -15,9 +16,7 @@ const MainTabs = () => {
       tabBar={props => <CustomTabBar {...props} />}
       screenOptions={{ headerShown: false }}>
       <Tab.Screen name={TAB_ROUTES.HOME}>{() => <HomeScreen />}</Tab.Screen>
-      <Tab.Screen name={TAB_ROUTES.MALL}>
-        {() => <PlaceholderScreen title="The Essence Mall" iconName="shopping-bag" />}
-      </Tab.Screen>
+      <Tab.Screen name={TAB_ROUTES.MALL}>{() => <MallScreen />}</Tab.Screen>
       <Tab.Screen name={TAB_ROUTES.WISHLIST}>
         {() => <PlaceholderScreen title="Curated Wishlist" iconName="heart" />}
       </Tab.Screen>
