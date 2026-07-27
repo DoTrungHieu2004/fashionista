@@ -1,0 +1,35 @@
+# Expo & React Native build artifacts
+.expo/
+.expo-shared/
+web-build/
+dist/
+build/
+
+# Native folders
+android/
+ios/
+
+# Dependencies
+node_modules/
+
+# TypeScript configurations & environment
+.tsc-out/
+expo-env.d.ts
+
+# Tests & coverage
+coverage/
+
+# Local environment & secrets
+.env
+.env.*
+!.env.example
+
+# System & IDE files
+.DS_Store
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
