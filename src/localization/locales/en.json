@@ -1,0 +1,41 @@
+{
+  "heading": {
+    "login": "Welcome back",
+    "register": "Create account"
+  },
+  "subheading": {
+    "login": "Discover the latest trends in luxury fashion",
+    "register": "Join our global fashion community and discover curated collections"
+  },
+  "label": {
+    "email": "Email address",
+    "password": "Password",
+    "confirmPassword": "Confirm password"
+  },
+  "error": {
+    "login": "Please fill in both email and password fields.",
+    "allFieldsMissing": "Please fill in all fields.",
+    "emailWrongFormat": "Please enter a valid email address",
+    "passwordMismatch": "Password do not match",
+    "checkboxMissing": "You must agree to the Terms of Service and Privacy Policy."
+  },
+  "button": {
+    "login": "Login",
+    "register": "Register",
+    "OK": "OK"
+  },
+  "linkButton": {
+    "forgotPass": "Forgot password?",
+    "register": "Register"
+  },
+  "text": {
+    "continueDivider": "OR CONTINUE WITH",
+    "noAccount": "Don't have an account? "
+  },
+  "modal": {
+    "validationError": "Validation error"
+  },
+  "trans": {
+    "register_agreement": "By registering, I agree to Fashionista's <tos>Terms of Service</tos> and <pp>Privacy Policy</pp>."
+  }
+}

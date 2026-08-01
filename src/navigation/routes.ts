@@ -1,9 +1,18 @@
 export const ROUTES = {
-  SPLASH: 'Splash',
+  // Stacks
+  AUTH_STACK: 'AuthStack',
+  MAIN_STACK: 'MainStack',
+
+  // Authentication
   LOGIN: 'Login',
+  REGISTER: 'Register',
 } as const;
 
-export type RootStackParamList = {
-  [ROUTES.SPLASH]: undefined;
+export type AuthStackParamList = {
   [ROUTES.LOGIN]: undefined;
+  [ROUTES.REGISTER]: undefined;
+};
+
+export type RootStackParamList = {
+  [ROUTES.AUTH_STACK]: undefined;
 };

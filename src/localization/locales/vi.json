@@ -1,0 +1,41 @@
+{
+  "heading": {
+    "login": "Chào mừng quay trở lại",
+    "register": "Tạo tài khoản"
+  },
+  "subheading": {
+    "login": "Khám phá xu hướng mới nhất trong thời trang xa xỉ",
+    "register": "Hãy tham gia cộng đồng thời trang toàn cầu của chúng tôi và khám phá những bộ sưu tập được tuyển chọn kỹ lưỡng"
+  },
+  "label": {
+    "email": "Địa chỉ email",
+    "password": "Mật khẩu",
+    "confirmPassword": "Xác nhận mật khẩu"
+  },
+  "error": {
+    "login": "Vui lòng nhập email và mật khẩu.",
+    "allFieldsMissing": "Vui lòng nhập tất cả thông tin.",
+    "emailWrongFormat": "Vui lòng nhập email đúng định dạng.",
+    "passwordMismatch": "Mật khẩu không trùng khớp",
+    "checkboxMissing": "Bạn phải đồng ý với Điều khoản Dịch vụ và Chính sách Bảo mật."
+  },
+  "button": {
+    "login": "Đăng nhập",
+    "register": "Đăng ký",
+    "OK": "OK"
+  },
+  "linkButton": {
+    "forgotPass": "Quên mật khẩu?",
+    "register": "Đăng ký"
+  },
+  "text": {
+    "continueDivider": "HOẶC TIẾP TỤC VỚI",
+    "noAccount": "Không có tài khoản? "
+  },
+  "modal": {
+    "validationError": "Lỗi kiểm tra dữ liệu"
+  },
+  "trans": {
+    "register_agreement": "Khi đăng ký, tôi đồng ý với <tos>Điều khoản Dịch vụ</tos> và <pp>Chính sách Bảo mật</pp> của Fashionista."
+  }
+}

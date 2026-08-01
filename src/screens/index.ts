@@ -1,7 +1,4 @@
-import SplashScreen from './splash/SplashScreen';
-
 import LoginScreen from './auth/LoginScreen';
+import RegisterScreen from './auth/RegisterScreen';
 
-export const SplashModule = { SplashScreen } as const;
-
-export const AuthScreens = { LoginScreen } as const;
+export const AuthScreens = { LoginScreen, RegisterScreen } as const;
