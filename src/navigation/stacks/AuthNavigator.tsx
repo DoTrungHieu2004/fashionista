@@ -17,6 +17,8 @@ const AuthNavigator = () => {
     >
       <Stack.Screen name={ROUTES.LOGIN} component={AuthScreens.LoginScreen} />
       <Stack.Screen name={ROUTES.REGISTER} component={AuthScreens.RegisterScreen} />
+      <Stack.Screen name={ROUTES.FORGOT_PASSWORD} component={AuthScreens.ForgotPasswordScreen} />
+      <Stack.Screen name={ROUTES.RESET_PASSWORD} component={AuthScreens.ResetPasswordScreen} />
     </Stack.Navigator>
   );
 };

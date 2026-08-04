@@ -1,19 +1,28 @@
 {
   "heading": {
     "login": "Welcome back",
-    "register": "Create account"
+    "register": "Create account",
+    "forgotPass": "Forgot password",
+    "resetPass": "Reset password"
   },
   "subheading": {
     "login": "Discover the latest trends in luxury fashion",
-    "register": "Join our global fashion community and discover curated collections"
+    "register": "Join our global fashion community and discover curated collections",
+    "forgotPass": "Enter the email address associated with your account and we'll send you a link to reset your password.",
+    "resetPass": "Choose a strong, unique password to keep your fashion vault secure."
   },
   "label": {
     "email": "Email address",
     "password": "Password",
-    "confirmPassword": "Confirm password"
+    "confirmPassword": "Confirm password",
+    "newPassword": "New password"
+  },
+  "placeholder": {
+    "email": "Enter your email"
   },
   "error": {
     "login": "Please fill in both email and password fields.",
+    "emailMissing": "Please enter your email address",
     "allFieldsMissing": "Please fill in all fields.",
     "emailWrongFormat": "Please enter a valid email address",
     "passwordMismatch": "Password do not match",
@@ -22,18 +31,34 @@
   "button": {
     "login": "Login",
     "register": "Register",
-    "OK": "OK"
+    "resetLink": "Send reset link",
+    "OK": "OK",
+    "resetPass": "Reset password"
   },
   "linkButton": {
     "forgotPass": "Forgot password?",
-    "register": "Register"
+    "register": "Register",
+    "contactSupport": "Contact Fashionista support"
   },
   "text": {
     "continueDivider": "OR CONTINUE WITH",
-    "noAccount": "Don't have an account? "
+    "noAccount": "Don't have an account? ",
+    "passwordConditions": {
+      "hasLength": "At least 8 characters",
+      "hasSpecialChar": "One special character or number",
+      "passwordsMatch": "Password match"
+    },
+    "havingTrouble": "Having trouble?",
+    "strength": "STRENGTH: "
   },
   "modal": {
     "validationError": "Validation error"
+  },
+  "password_strength": {
+    "none": "none",
+    "weak": "weak",
+    "medium": "medium",
+    "strong": "strong"
   },
   "trans": {
     "register_agreement": "By registering, I agree to Fashionista's <tos>Terms of Service</tos> and <pp>Privacy Policy</pp>."

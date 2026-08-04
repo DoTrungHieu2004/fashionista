@@ -45,7 +45,7 @@ export const LIGHT_THEME_COLOURS = {
   inverseSurface: '#332f39',
   inverseOnSurface: '#f6eefc',
   surfaceTint: '#7331df',
-  surfaceaVariant: '#e8e0ee',
+  surfaceVariant: '#e8e0ee',
   outline: '#7b7486',
   outlineVariant: '#ccc3d7',
 } as const;

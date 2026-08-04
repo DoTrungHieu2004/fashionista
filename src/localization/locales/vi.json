@@ -1,19 +1,28 @@
 {
   "heading": {
     "login": "Chào mừng quay trở lại",
-    "register": "Tạo tài khoản"
+    "register": "Tạo tài khoản",
+    "forgotPass": "Quên mật khẩu",
+    "resetPass": "Đặt lại mật khẩu"
   },
   "subheading": {
     "login": "Khám phá xu hướng mới nhất trong thời trang xa xỉ",
-    "register": "Hãy tham gia cộng đồng thời trang toàn cầu của chúng tôi và khám phá những bộ sưu tập được tuyển chọn kỹ lưỡng"
+    "register": "Hãy tham gia cộng đồng thời trang toàn cầu của chúng tôi và khám phá những bộ sưu tập được tuyển chọn kỹ lưỡng",
+    "forgotPass": "Nhập địa chỉ email liên kết với tài khoản của bạn và chúng tôi sẽ gửi cho bạn một liên kết để đặt lại mật khẩu.",
+    "resetPass": "Hãy chọn một mật khẩu mạnh và độc đáo để bảo vệ kho lưu trữ thời trang của bạn."
   },
   "label": {
     "email": "Địa chỉ email",
     "password": "Mật khẩu",
-    "confirmPassword": "Xác nhận mật khẩu"
+    "confirmPassword": "Xác nhận mật khẩu",
+    "newPassword": "Mật khẩu mới"
+  },
+  "placeholder": {
+    "email": "Nhập email của bạn"
   },
   "error": {
     "login": "Vui lòng nhập email và mật khẩu.",
+    "emailMissing": "Vui lòng nhập địa chỉ email",
     "allFieldsMissing": "Vui lòng nhập tất cả thông tin.",
     "emailWrongFormat": "Vui lòng nhập email đúng định dạng.",
     "passwordMismatch": "Mật khẩu không trùng khớp",
@@ -22,18 +31,34 @@
   "button": {
     "login": "Đăng nhập",
     "register": "Đăng ký",
-    "OK": "OK"
+    "resetLink": "Gửi link đặt lại mật khẩu",
+    "OK": "OK",
+    "resetPass": "Đặt lại mật khẩu"
   },
   "linkButton": {
     "forgotPass": "Quên mật khẩu?",
-    "register": "Đăng ký"
+    "register": "Đăng ký",
+    "contactSupport": "Liên hệ hỗ trợ từ Fashionista"
   },
   "text": {
     "continueDivider": "HOẶC TIẾP TỤC VỚI",
-    "noAccount": "Không có tài khoản? "
+    "noAccount": "Không có tài khoản? ",
+    "passwordConditions": {
+      "hasLength": "Ít nhất 8 ký tự",
+      "hasSpecialChar": "Một ký tự đặc biệt hoặc số",
+      "passwordsMatch": "Mật khẩu đồng nhất"
+    },
+    "havingTrouble": "Bạn đang gặp vấn đề?",
+    "strength": "ĐỘ MẠNH: "
   },
   "modal": {
     "validationError": "Lỗi kiểm tra dữ liệu"
+  },
+  "password_strength": {
+    "none": "không",
+    "weak": "yếu",
+    "medium": "bình thường",
+    "strong": "mạnh"
   },
   "trans": {
     "register_agreement": "Khi đăng ký, tôi đồng ý với <tos>Điều khoản Dịch vụ</tos> và <pp>Chính sách Bảo mật</pp> của Fashionista."

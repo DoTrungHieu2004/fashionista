@@ -97,7 +97,7 @@ const LoginScreen = () => {
                 secureTextEntry={secure}
                 toggleSecureEntry={() => setSecure(!secure)}
                 rightLabel={t('linkButton.forgotPass')}
-                onRightLabelPress={() => alert('Forgot password flow triggered')}
+                onRightLabelPress={() => navigation.navigate('ForgotPassword')}
               />
 
               <TouchableOpacity
