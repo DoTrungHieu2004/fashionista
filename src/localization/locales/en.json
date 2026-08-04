@@ -33,7 +33,8 @@
     "register": "Register",
     "resetLink": "Send reset link",
     "OK": "OK",
-    "resetPass": "Reset password"
+    "resetPass": "Reset password",
+    "goToLogin": "Go to login"
   },
   "linkButton": {
     "forgotPass": "Forgot password?",
@@ -52,7 +53,11 @@
     "strength": "STRENGTH: "
   },
   "modal": {
-    "validationError": "Validation error"
+    "validationError": "Validation error",
+    "passwordReset": {
+      "title": "Password reset successful",
+      "subtitle": "Your password has been successfully updated. You can now log in with your new credentials."
+    }
   },
   "password_strength": {
     "none": "none",

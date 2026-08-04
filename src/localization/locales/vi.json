@@ -33,7 +33,8 @@
     "register": "Đăng ký",
     "resetLink": "Gửi link đặt lại mật khẩu",
     "OK": "OK",
-    "resetPass": "Đặt lại mật khẩu"
+    "resetPass": "Đặt lại mật khẩu",
+    "goToLogin": "Sang đăng nhập"
   },
   "linkButton": {
     "forgotPass": "Quên mật khẩu?",
@@ -52,7 +53,11 @@
     "strength": "ĐỘ MẠNH: "
   },
   "modal": {
-    "validationError": "Lỗi kiểm tra dữ liệu"
+    "validationError": "Lỗi kiểm tra dữ liệu",
+    "passwordReset": {
+      "title": "Đặt lại mật khẩu thành công",
+      "subtitle": "Mật khẩu của bạn đã được cập nhật thành công. Giờ đây, bạn có thể đăng nhập bằng thông tin đăng nhập mới."
+    }
   },
   "password_strength": {
     "none": "không",

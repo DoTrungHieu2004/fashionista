@@ -1,5 +1,15 @@
 import React, { useState } from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {
+  Image,
+  Keyboard,
+  KeyboardAvoidingView,
+  Platform,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
 import { Trans, useTranslation } from 'react-i18next';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Checkbox from 'expo-checkbox';
@@ -53,144 +63,166 @@ const RegisterScreen = () => {
   };
 
   return (
-    <SafeAreaView style={[styles.container, { backgroundColor: colours.background }]}>
-      <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
-          <Ionicons name="arrow-back" size={24} color={colours.onSurfaceVariant} />
-        </TouchableOpacity>
-      </View>
-
-      <View style={styles.content}>
-        <Text
-          style={[
-            styles.heading,
-            { color: colours.onSurface, fontFamily: fonts.heading, marginBottom: spacing.stackSm },
-          ]}
-        >
-          {t('heading.register')}
-        </Text>
-        <Text
-          style={[
-            styles.subheading,
-            { color: colours.onSurfaceVariant, fontFamily: fonts.body, marginBottom: spacing.stackLg },
-          ]}
-        >
-          {t('subheading.register')}
-        </Text>
-
-        <View style={{ marginBottom: spacing.stackSm }}>
-          <LabeledInput
-            label={t('label.email')}
-            placeholder="name@example.com"
-            value={email}
-            onChangeText={setEmail}
-            iconName="mail"
-          />
-          <LabeledInput
-            label={t('label.password')}
-            placeholder="••••••••"
-            value={password}
-            onChangeText={setPassword}
-            secureTextEntry={securePass}
-            toggleSecureEntry={() => setSecurePass(!securePass)}
-          />
-          <LabeledInput
-            label={t('label.confirmPassword')}
-            placeholder="••••••••"
-            value={confirmPassword}
-            onChangeText={setConfirmPassword}
-            secureTextEntry={secureConfirm}
-            toggleSecureEntry={() => setSecureConfirm(!secureConfirm)}
-          />
-
-          <View style={[styles.checkboxRow, { marginBottom: spacing.stackLg, marginTop: spacing.stackXs }]}>
-            <Checkbox
-              style={styles.checkbox}
-              value={termsAccepted}
-              onValueChange={setTermsAccepted}
-              color={termsAccepted ? colours.primary : undefined}
-            />
-            <Text style={[styles.termsText, { color: colours.onSurfaceVariant, fontFamily: fonts.body }]}>
-              <Trans
-                i18nKey="trans.register_agreement"
-                components={{
-                  tos: <Text style={[styles.linkText, { color: colours.primary }]} onPress={handleOpenTerms} />,
-                  pp: <Text style={[styles.linkText, { color: colours.primary }]} onPress={handleOpenPrivacy} />,
-                }}
-              />
-            </Text>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={styles.container}
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 64 : 0}
+    >
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <SafeAreaView style={[styles.container, { backgroundColor: colours.background }]}>
+          <View style={styles.header}>
+            <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
+              <Ionicons name="arrow-back" size={24} color={colours.onSurfaceVariant} />
+            </TouchableOpacity>
           </View>
 
-          <TouchableOpacity
-            style={[
-              styles.primaryButton,
-              {
-                backgroundColor: colours.primary,
-                borderRadius: rounded.md,
-                marginTop: spacing.stackSm,
-                shadowRadius: rounded.sm,
-              },
-            ]}
-            onPress={handleRegister}
-          >
-            <Text style={[styles.primaryButtonText, { color: neutrals.neutral50, fontFamily: fonts.body }]}>
-              {t('button.register')}
+          <View style={styles.content}>
+            <Text
+              style={[
+                styles.heading,
+                { color: colours.onSurface, fontFamily: fonts.heading, marginBottom: spacing.stackSm },
+              ]}
+            >
+              {t('heading.register')}
             </Text>
-            <Ionicons
-              name="chevron-forward"
-              size={20}
-              color={neutrals.neutral50}
-              style={{ marginLeft: spacing.stackSm }}
-            />
-          </TouchableOpacity>
-        </View>
+            <Text
+              style={[
+                styles.subheading,
+                { color: colours.onSurfaceVariant, fontFamily: fonts.body, marginBottom: spacing.stackLg },
+              ]}
+            >
+              {t('subheading.register')}
+            </Text>
 
-        <View style={[styles.dividerContainer, { marginVertical: spacing.stackLg }]}>
-          <View style={[styles.dividerLine, { backgroundColor: colours.outlineVariant }]} />
-          <Text
-            style={[
-              styles.dividerText,
-              { color: colours.outline, fontFamily: fonts.body, marginHorizontal: spacing.stackMd },
-            ]}
-          >
-            {t('text.continueDivider')}
-          </Text>
-          <View style={[styles.dividerLine, { backgroundColor: colours.outlineVariant }]} />
-        </View>
+            <View style={{ marginBottom: spacing.stackSm }}>
+              <LabeledInput
+                label={t('label.email')}
+                placeholder="name@example.com"
+                value={email}
+                onChangeText={setEmail}
+                iconName="mail"
+                keyboardType="email-address"
+                autoCapitalize="none"
+                returnKeyType="next"
+              />
+              <LabeledInput
+                label={t('label.password')}
+                placeholder="••••••••"
+                value={password}
+                onChangeText={setPassword}
+                secureTextEntry={securePass}
+                toggleSecureEntry={() => setSecurePass(!securePass)}
+                returnKeyType="done"
+              />
+              <LabeledInput
+                label={t('label.confirmPassword')}
+                placeholder="••••••••"
+                value={confirmPassword}
+                onChangeText={setConfirmPassword}
+                secureTextEntry={secureConfirm}
+                toggleSecureEntry={() => setSecureConfirm(!secureConfirm)}
+                returnKeyType="done"
+              />
 
-        <View style={[styles.socialContainer, { gap: spacing.stackMd, marginBottom: spacing.stackLg }]}>
-          <TouchableOpacity
-            key="google"
-            style={[styles.socialButton, { backgroundColor: colours.background, borderColor: colours.outlineVariant }]}
-            onPress={() => console.log('Google register')}
-          >
-            <Image source={GOOGLE_ICON} style={styles.socialIcon} resizeMode="contain" />
-          </TouchableOpacity>
+              <View style={[styles.checkboxRow, { marginBottom: spacing.stackLg, marginTop: spacing.stackXs }]}>
+                <Checkbox
+                  style={styles.checkbox}
+                  value={termsAccepted}
+                  onValueChange={setTermsAccepted}
+                  color={termsAccepted ? colours.primary : undefined}
+                />
+                <Text style={[styles.termsText, { color: colours.onSurfaceVariant, fontFamily: fonts.body }]}>
+                  <Trans
+                    i18nKey="trans.register_agreement"
+                    components={{
+                      tos: <Text style={[styles.linkText, { color: colours.primary }]} onPress={handleOpenTerms} />,
+                      pp: <Text style={[styles.linkText, { color: colours.primary }]} onPress={handleOpenPrivacy} />,
+                    }}
+                  />
+                </Text>
+              </View>
 
-          <TouchableOpacity
-            key="facebook"
-            style={[styles.socialButton, { backgroundColor: colours.background, borderColor: colours.outlineVariant }]}
-            onPress={() => console.log('Facebook register')}
-          >
-            <Image source={FACEBOOK_ICON} style={styles.socialIcon} resizeMode="contain" />
-          </TouchableOpacity>
+              <TouchableOpacity
+                style={[
+                  styles.primaryButton,
+                  {
+                    backgroundColor: colours.primary,
+                    borderRadius: rounded.md,
+                    marginTop: spacing.stackSm,
+                    shadowRadius: rounded.sm,
+                  },
+                ]}
+                onPress={handleRegister}
+              >
+                <Text style={[styles.primaryButtonText, { color: neutrals.neutral50, fontFamily: fonts.body }]}>
+                  {t('button.register')}
+                </Text>
+                <Ionicons
+                  name="chevron-forward"
+                  size={20}
+                  color={neutrals.neutral50}
+                  style={{ marginLeft: spacing.stackSm }}
+                />
+              </TouchableOpacity>
+            </View>
 
-          <TouchableOpacity
-            key="apple"
-            style={[styles.socialButton, { backgroundColor: colours.background, borderColor: colours.outlineVariant }]}
-            onPress={() => console.log('Apple register')}
-          >
-            <Image source={APPLE_ICON} style={styles.socialIcon} resizeMode="contain" />
-          </TouchableOpacity>
-        </View>
-      </View>
+            <View style={[styles.dividerContainer, { marginVertical: spacing.stackLg }]}>
+              <View style={[styles.dividerLine, { backgroundColor: colours.outlineVariant }]} />
+              <Text
+                style={[
+                  styles.dividerText,
+                  { color: colours.outline, fontFamily: fonts.body, marginHorizontal: spacing.stackMd },
+                ]}
+              >
+                {t('text.continueDivider')}
+              </Text>
+              <View style={[styles.dividerLine, { backgroundColor: colours.outlineVariant }]} />
+            </View>
 
-      <ValidationErrorModal
-        visible={errorModal.visible}
-        message={errorModal.message}
-        onClose={() => setErrorModal({ visible: false, message: '' })}
-      />
-    </SafeAreaView>
+            <View style={[styles.socialContainer, { gap: spacing.stackMd, marginBottom: spacing.stackLg }]}>
+              <TouchableOpacity
+                key="google"
+                style={[
+                  styles.socialButton,
+                  { backgroundColor: colours.background, borderColor: colours.outlineVariant },
+                ]}
+                onPress={() => console.log('Google register')}
+              >
+                <Image source={GOOGLE_ICON} style={styles.socialIcon} resizeMode="contain" />
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                key="facebook"
+                style={[
+                  styles.socialButton,
+                  { backgroundColor: colours.background, borderColor: colours.outlineVariant },
+                ]}
+                onPress={() => console.log('Facebook register')}
+              >
+                <Image source={FACEBOOK_ICON} style={styles.socialIcon} resizeMode="contain" />
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                key="apple"
+                style={[
+                  styles.socialButton,
+                  { backgroundColor: colours.background, borderColor: colours.outlineVariant },
+                ]}
+                onPress={() => console.log('Apple register')}
+              >
+                <Image source={APPLE_ICON} style={styles.socialIcon} resizeMode="contain" />
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          <ValidationErrorModal
+            visible={errorModal.visible}
+            message={errorModal.message}
+            onClose={() => setErrorModal({ visible: false, message: '' })}
+          />
+        </SafeAreaView>
+      </TouchableWithoutFeedback>
+    </KeyboardAvoidingView>
   );
 };
 

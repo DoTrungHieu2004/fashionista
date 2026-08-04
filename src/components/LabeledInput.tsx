@@ -1,5 +1,13 @@
 import React from 'react';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import {
+  KeyboardTypeOptions,
+  ReturnKeyTypeOptions,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
 import { useTheme } from '../theme/ThemeProvider';
@@ -15,6 +23,10 @@ interface LabeledInputProps {
   onRightLabelPress?: () => void;
   error?: string;
   iconName?: keyof typeof Feather.glyphMap;
+  keyboardType?: KeyboardTypeOptions;
+  autoCapitalize?: 'none' | 'sentences' | 'words' | 'characters';
+  returnKeyType?: ReturnKeyTypeOptions;
+  onSubmitEditing?: () => void;
 }
 
 const LabeledInput: React.FC<LabeledInputProps> = ({
@@ -28,6 +40,11 @@ const LabeledInput: React.FC<LabeledInputProps> = ({
   onRightLabelPress,
   error,
   iconName,
+  keyboardType = 'default',
+  autoCapitalize = 'none',
+  returnKeyType = 'done',
+  onSubmitEditing,
+  ...props
 }) => {
   const { colours, spacing, fonts } = useTheme();
 
@@ -52,6 +69,11 @@ const LabeledInput: React.FC<LabeledInputProps> = ({
           value={value}
           onChangeText={onChangeText}
           secureTextEntry={secureTextEntry}
+          keyboardType={keyboardType}
+          autoCapitalize={autoCapitalize}
+          returnKeyType={returnKeyType}
+          onSubmitEditing={onSubmitEditing}
+          {...props}
         />
         {iconName && <Feather name={iconName} size={20} color={colours.onSurfaceVariant} />}
         {toggleSecureEntry && (

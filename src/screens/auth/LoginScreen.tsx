@@ -1,5 +1,16 @@
 import React, { useState } from 'react';
-import { Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {
+  Image,
+  ImageBackground,
+  Keyboard,
+  KeyboardAvoidingView,
+  Platform,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
@@ -44,141 +55,154 @@ const LoginScreen = () => {
         onClose={() => setErrorModal({ visible: false, message: '' })}
       />
 
-      <SafeAreaView style={{ flex: 1 }}>
-        <View style={styles.contentContainer}>
-          <View
-            style={[
-              styles.card,
-              {
-                backgroundColor: addOpacity(colours.surfaceContainerLowest, 40),
-                borderColor: addOpacity(colours.surfaceContainerLowest, 20),
-                borderRadius: rounded.xl,
-              },
-            ]}
-          >
-            <Text
-              style={[
-                styles.title,
-                { color: colours.primary, fontFamily: fonts.heading, marginBottom: spacing.stackSm },
-              ]}
-            >
-              Fashionista
-            </Text>
-            <Text
-              style={[
-                styles.heading,
-                { color: colours.onSurface, fontFamily: fonts.heading, marginBottom: spacing.stackSm },
-              ]}
-            >
-              {t('heading.login')}
-            </Text>
-            <Text
-              style={[
-                styles.subheading,
-                { color: colours.onSurfaceVariant, fontFamily: fonts.body, marginBottom: spacing.stackLg },
-              ]}
-            >
-              {t('subheading.login')}
-            </Text>
-
-            <View style={{ marginBottom: spacing.stackSm }}>
-              <LabeledInput
-                label={t('label.email')}
-                placeholder="name@example.com"
-                value={email}
-                onChangeText={setEmail}
-                iconName="mail"
-              />
-              <LabeledInput
-                label={t('label.password')}
-                placeholder="••••••••"
-                value={password}
-                onChangeText={setPassword}
-                secureTextEntry={secure}
-                toggleSecureEntry={() => setSecure(!secure)}
-                rightLabel={t('linkButton.forgotPass')}
-                onRightLabelPress={() => navigation.navigate('ForgotPassword')}
-              />
-
-              <TouchableOpacity
+      <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        style={{ flex: 1 }}
+        keyboardVerticalOffset={Platform.OS === 'ios' ? 64 : 0}
+      >
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <SafeAreaView style={{ flex: 1 }}>
+            <View style={styles.contentContainer}>
+              <View
                 style={[
-                  styles.primaryButton,
-                  { backgroundColor: colours.primary, marginTop: spacing.stackSm, shadowRadius: rounded.sm },
-                ]}
-                onPress={handleLogin}
-              >
-                <Text style={[styles.primaryButtonText, { color: neutrals.neutral50, fontFamily: fonts.body }]}>
-                  {t('button.login')}
-                </Text>
-              </TouchableOpacity>
-            </View>
-
-            <View style={[styles.dividerContainer, { marginVertical: spacing.stackLg }]}>
-              <View style={[styles.dividerLine, { backgroundColor: colours.outlineVariant }]} />
-              <Text
-                style={[
-                  styles.dividerText,
-                  { color: colours.outline, fontFamily: fonts.body, marginHorizontal: spacing.stackMd },
+                  styles.card,
+                  {
+                    backgroundColor: addOpacity(colours.surfaceContainerLowest, 40),
+                    borderColor: addOpacity(colours.surfaceContainerLowest, 20),
+                    borderRadius: rounded.xl,
+                  },
                 ]}
               >
-                {t('text.continueDivider')}
-              </Text>
-              <View style={[styles.dividerLine, { backgroundColor: colours.outlineVariant }]} />
-            </View>
-
-            <View style={[styles.socialContainer, { gap: spacing.stackMd, marginBottom: spacing.stackLg }]}>
-              <TouchableOpacity
-                key="google"
-                style={[
-                  styles.socialButton,
-                  { backgroundColor: colours.background, borderColor: colours.outlineVariant },
-                ]}
-                onPress={() => console.log('Google login')}
-              >
-                <Image source={GOOGLE_ICON} style={styles.socialIcon} resizeMode="contain" />
-              </TouchableOpacity>
-
-              <TouchableOpacity
-                key="facebook"
-                style={[
-                  styles.socialButton,
-                  { backgroundColor: colours.background, borderColor: colours.outlineVariant },
-                ]}
-                onPress={() => console.log('Facebook login')}
-              >
-                <Image source={FACEBOOK_ICON} style={styles.socialIcon} resizeMode="contain" />
-              </TouchableOpacity>
-
-              <TouchableOpacity
-                key="apple"
-                style={[
-                  styles.socialButton,
-                  { backgroundColor: colours.background, borderColor: colours.outlineVariant },
-                ]}
-                onPress={() => console.log('Apple login')}
-              >
-                <Image source={APPLE_ICON} style={styles.socialIcon} resizeMode="contain" />
-              </TouchableOpacity>
-            </View>
-
-            <View style={styles.footer}>
-              <Text style={[styles.footerText, { color: colours.onSurfaceVariant, fontFamily: fonts.body }]}>
-                {t('text.noAccount')}
-              </Text>
-              <TouchableOpacity onPress={() => navigation.navigate('Register')}>
                 <Text
                   style={[
-                    styles.footerText,
-                    { color: colours.primary, fontFamily: fonts.body, textDecorationLine: 'underline' },
+                    styles.title,
+                    { color: colours.primary, fontFamily: fonts.heading, marginBottom: spacing.stackSm },
                   ]}
                 >
-                  {t('linkButton.register')}
+                  Fashionista
                 </Text>
-              </TouchableOpacity>
+                <Text
+                  style={[
+                    styles.heading,
+                    { color: colours.onSurface, fontFamily: fonts.heading, marginBottom: spacing.stackSm },
+                  ]}
+                >
+                  {t('heading.login')}
+                </Text>
+                <Text
+                  style={[
+                    styles.subheading,
+                    { color: colours.onSurfaceVariant, fontFamily: fonts.body, marginBottom: spacing.stackLg },
+                  ]}
+                >
+                  {t('subheading.login')}
+                </Text>
+
+                <View style={{ marginBottom: spacing.stackSm }}>
+                  <LabeledInput
+                    label={t('label.email')}
+                    placeholder="name@example.com"
+                    value={email}
+                    onChangeText={setEmail}
+                    iconName="mail"
+                    keyboardType="email-address"
+                    autoCapitalize="none"
+                    returnKeyType="next"
+                  />
+                  <LabeledInput
+                    label={t('label.password')}
+                    placeholder="••••••••"
+                    value={password}
+                    onChangeText={setPassword}
+                    secureTextEntry={secure}
+                    toggleSecureEntry={() => setSecure(!secure)}
+                    rightLabel={t('linkButton.forgotPass')}
+                    onRightLabelPress={() => navigation.navigate('ForgotPassword')}
+                    returnKeyType="done"
+                    onSubmitEditing={handleLogin}
+                  />
+
+                  <TouchableOpacity
+                    style={[
+                      styles.primaryButton,
+                      { backgroundColor: colours.primary, marginTop: spacing.stackSm, shadowRadius: rounded.sm },
+                    ]}
+                    onPress={handleLogin}
+                  >
+                    <Text style={[styles.primaryButtonText, { color: neutrals.neutral50, fontFamily: fonts.body }]}>
+                      {t('button.login')}
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+
+                <View style={[styles.dividerContainer, { marginVertical: spacing.stackLg }]}>
+                  <View style={[styles.dividerLine, { backgroundColor: colours.outlineVariant }]} />
+                  <Text
+                    style={[
+                      styles.dividerText,
+                      { color: colours.outline, fontFamily: fonts.body, marginHorizontal: spacing.stackMd },
+                    ]}
+                  >
+                    {t('text.continueDivider')}
+                  </Text>
+                  <View style={[styles.dividerLine, { backgroundColor: colours.outlineVariant }]} />
+                </View>
+
+                <View style={[styles.socialContainer, { gap: spacing.stackMd, marginBottom: spacing.stackLg }]}>
+                  <TouchableOpacity
+                    key="google"
+                    style={[
+                      styles.socialButton,
+                      { backgroundColor: colours.background, borderColor: colours.outlineVariant },
+                    ]}
+                    onPress={() => console.log('Google login')}
+                  >
+                    <Image source={GOOGLE_ICON} style={styles.socialIcon} resizeMode="contain" />
+                  </TouchableOpacity>
+
+                  <TouchableOpacity
+                    key="facebook"
+                    style={[
+                      styles.socialButton,
+                      { backgroundColor: colours.background, borderColor: colours.outlineVariant },
+                    ]}
+                    onPress={() => console.log('Facebook login')}
+                  >
+                    <Image source={FACEBOOK_ICON} style={styles.socialIcon} resizeMode="contain" />
+                  </TouchableOpacity>
+
+                  <TouchableOpacity
+                    key="apple"
+                    style={[
+                      styles.socialButton,
+                      { backgroundColor: colours.background, borderColor: colours.outlineVariant },
+                    ]}
+                    onPress={() => console.log('Apple login')}
+                  >
+                    <Image source={APPLE_ICON} style={styles.socialIcon} resizeMode="contain" />
+                  </TouchableOpacity>
+                </View>
+
+                <View style={styles.footer}>
+                  <Text style={[styles.footerText, { color: colours.onSurfaceVariant, fontFamily: fonts.body }]}>
+                    {t('text.noAccount')}
+                  </Text>
+                  <TouchableOpacity onPress={() => navigation.navigate('Register')}>
+                    <Text
+                      style={[
+                        styles.footerText,
+                        { color: colours.primary, fontFamily: fonts.body, textDecorationLine: 'underline' },
+                      ]}
+                    >
+                      {t('linkButton.register')}
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
             </View>
-          </View>
-        </View>
-      </SafeAreaView>
+          </SafeAreaView>
+        </TouchableWithoutFeedback>
+      </KeyboardAvoidingView>
     </ImageBackground>
   );
 };

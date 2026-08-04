@@ -1,5 +1,15 @@
 import React, { useState } from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {
+  Image,
+  Keyboard,
+  KeyboardAvoidingView,
+  Platform,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
@@ -37,70 +47,82 @@ const ForgotPasswordScreen = () => {
   };
 
   return (
-    <SafeAreaView style={[styles.container, { backgroundColor: colours.background }]}>
-      <ValidationErrorModal
-        visible={errorModal.visible}
-        message={errorModal.message}
-        onClose={() => setErrorModal({ visible: false, message: '' })}
-      />
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={{ flex: 1 }}
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 64 : 0}
+    >
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <SafeAreaView style={[styles.container, { backgroundColor: colours.background }]}>
+          <ValidationErrorModal
+            visible={errorModal.visible}
+            message={errorModal.message}
+            onClose={() => setErrorModal({ visible: false, message: '' })}
+          />
 
-      <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
-          <Ionicons name="arrow-back" size={24} color={colours.onSurfaceVariant} />
-        </TouchableOpacity>
-      </View>
+          <View style={styles.header}>
+            <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
+              <Ionicons name="arrow-back" size={24} color={colours.onSurfaceVariant} />
+            </TouchableOpacity>
+          </View>
 
-      <View style={[styles.content, { paddingHorizontal: spacing.stackLg, paddingTop: spacing.stackSm }]}>
-        <Image
-          source={FORGOT_PASS_HERO_IMAGE}
-          style={[styles.heroImage, { borderRadius: rounded.lg, marginBottom: spacing.stackLg }]}
-          resizeMode="cover"
-        />
+          <View style={[styles.content, { paddingHorizontal: spacing.stackLg, paddingTop: spacing.stackSm }]}>
+            <Image
+              source={FORGOT_PASS_HERO_IMAGE}
+              style={[styles.heroImage, { borderRadius: rounded.lg, marginBottom: spacing.stackLg }]}
+              resizeMode="cover"
+            />
 
-        <Text
-          style={[
-            styles.heading,
-            { color: colours.onBackground, fontFamily: fonts.heading, marginBottom: spacing.stackSm },
-          ]}
-        >
-          {t('heading.forgotPass')}
-        </Text>
-        <Text
-          style={[
-            styles.subheading,
-            { color: colours.onSurfaceVariant, fontFamily: fonts.body, marginBottom: spacing.stackLg },
-          ]}
-        >
-          {t('subheading.forgotPass')}
-        </Text>
+            <Text
+              style={[
+                styles.heading,
+                { color: colours.onBackground, fontFamily: fonts.heading, marginBottom: spacing.stackSm },
+              ]}
+            >
+              {t('heading.forgotPass')}
+            </Text>
+            <Text
+              style={[
+                styles.subheading,
+                { color: colours.onSurfaceVariant, fontFamily: fonts.body, marginBottom: spacing.stackLg },
+              ]}
+            >
+              {t('subheading.forgotPass')}
+            </Text>
 
-        <LabeledInput
-          label={t('label.email')}
-          placeholder={t('placeholder.email')}
-          value={email}
-          onChangeText={setEmail}
-          iconName="mail"
-        />
+            <LabeledInput
+              label={t('label.email')}
+              placeholder={t('placeholder.email')}
+              value={email}
+              onChangeText={setEmail}
+              iconName="mail"
+              keyboardType="email-address"
+              autoCapitalize="none"
+              returnKeyType="next"
+              onSubmitEditing={handleSendLink}
+            />
 
-        <TouchableOpacity
-          style={[
-            styles.primaryButton,
-            {
-              backgroundColor: colours.primary,
-              borderRadius: rounded.md,
-              marginTop: spacing.stackSm,
-              shadowRadius: rounded.sm,
-            },
-          ]}
-          onPress={handleSendLink}
-        >
-          <Text style={[styles.primaryButtonText, { color: neutrals.neutral50, fontFamily: fonts.body }]}>
-            {t('button.resetLink')}
-          </Text>
-          <Feather name="send" size={18} color={neutrals.neutral50} style={{ marginLeft: spacing.stackSm }} />
-        </TouchableOpacity>
-      </View>
-    </SafeAreaView>
+            <TouchableOpacity
+              style={[
+                styles.primaryButton,
+                {
+                  backgroundColor: colours.primary,
+                  borderRadius: rounded.md,
+                  marginTop: spacing.stackSm,
+                  shadowRadius: rounded.sm,
+                },
+              ]}
+              onPress={handleSendLink}
+            >
+              <Text style={[styles.primaryButtonText, { color: neutrals.neutral50, fontFamily: fonts.body }]}>
+                {t('button.resetLink')}
+              </Text>
+              <Feather name="send" size={18} color={neutrals.neutral50} style={{ marginLeft: spacing.stackSm }} />
+            </TouchableOpacity>
+          </View>
+        </SafeAreaView>
+      </TouchableWithoutFeedback>
+    </KeyboardAvoidingView>
   );
 };
 
