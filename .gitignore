@@ -1,41 +1,71 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
-
-# dependencies
+# ---------------------------------------------------------------
+# Dependencies
+# ---------------------------------------------------------------
 node_modules/
+.pnp
+.pnp.js
+.yarn/cache
+.yarn/install-state.gz
 
+# ---------------------------------------------------------------
 # Expo
+# ---------------------------------------------------------------
 .expo/
+.expo-shared/
 dist/
 web-build/
 expo-env.d.ts
+.metro-health-check*
 
-# Native
-.kotlin/
-*.orig.*
+# ---------------------------------------------------------------
+# Native projects (managed workflow — generated via prebuild)
+# ---------------------------------------------------------------
+/android
+/ios
 *.jks
 *.p8
 *.p12
 *.key
 *.mobileprovision
+*.orig.*
+.kotlin/
 
-# Metro
-.metro-health-check*
+# ---------------------------------------------------------------
+# Environment
+# ---------------------------------------------------------------
+.env
+.env.local
+.env.*.local
 
-# debug
+# ---------------------------------------------------------------
+# Logs / Debug
+# ---------------------------------------------------------------
 npm-debug.*
 yarn-debug.*
 yarn-error.*
+*.log
+.pnpm-debug.log*
 
-# macOS
-.DS_Store
-*.pem
+# ---------------------------------------------------------------
+# Testing / coverage
+# ---------------------------------------------------------------
+coverage/
+.nyc_output/
 
-# local env files
-.env*.local
-
-# typescript
+# ---------------------------------------------------------------
+# Build & caches
+# ---------------------------------------------------------------
 *.tsbuildinfo
+.eslintcache
+.cache/
 
-# generated native folders
-/ios
-/android
+# ---------------------------------------------------------------
+# Editors / OS
+# ---------------------------------------------------------------
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+.DS_Store
+Thumbs.db
+*.pem
