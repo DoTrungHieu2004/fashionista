@@ -20,6 +20,7 @@
     },
     "web": {
       "favicon": "./assets/app/favicon.png"
-    }
+    },
+    "plugins": ["expo-font"]
   }
 }
