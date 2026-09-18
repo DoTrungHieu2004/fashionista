@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+
+# Expo
+.expo/
+.expo-shared/
+
+# Build output
+dist/
+build/
+coverage/
+
+# Native generated projects
+android/
+ios/
+
+# Metro
+.metro/
+
+# Temporary files
+tmp/
+temp/
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Generated files
+*.generated.*
+generated/
+
+# Package manager caches
+.yarn/
+.pnpm-store/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,41 +1,157 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+# ============================================================
+# Dependencies
+# ============================================================
 
-# dependencies
 node_modules/
 
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# pnpm
+.pnpm-store/
+
+
+# ============================================================
 # Expo
+# ============================================================
+
 .expo/
+.expo-shared/
+
+# Expo web output
 dist/
-web-build/
-expo-env.d.ts
 
-# Native
-.kotlin/
-*.orig.*
-*.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
+# Expo/EAS local state
+.eas/
 
-# Metro
-.metro-health-check*
 
-# debug
-npm-debug.*
-yarn-debug.*
-yarn-error.*
+# ============================================================
+# React Native / Metro
+# ============================================================
 
-# macOS
-.DS_Store
+.metro/
+
+# React Native generated files
+*.jsbundle
+
+
+# ============================================================
+# Build output
+# ============================================================
+
+build/
+coverage/
+
+# Android
+android/.gradle/
+android/app/build/
+android/build/
+android/local.properties
+android/.cxx/
+
+# iOS
+ios/Pods/
+ios/build/
+ios/DerivedData/
+ios/*.xcworkspace/xcuserdata/
+ios/**/*.xcuserstate/
+
+
+# ============================================================
+# Environment variables / secrets
+# ============================================================
+
+.env
+.env.*
+!.env.example
+
+# Local secrets
 *.pem
+*.key
+*.p12
+*.pfx
 
-# local env files
-.env*.local
+# Firebase / service credentials
+google-services.json
+GoogleService-Info.plist
 
-# typescript
+# If you intentionally want these files committed,
+# remove them from this section.
+
+
+# ============================================================
+# Logs
+# ============================================================
+
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# ============================================================
+# Testing
+# ============================================================
+
+coverage/
+.nyc_output/
+
+
+# ============================================================
+# TypeScript
+# ============================================================
+
 *.tsbuildinfo
 
-# generated native folders
-/ios
-/android
+
+# ============================================================
+# ESLint / Prettier
+# ============================================================
+
+.eslintcache
+
+
+# ============================================================
+# IDE
+# ============================================================
+
+.vscode/
+
+.idea/
+*.iml
+
+
+# ============================================================
+# OS
+# ============================================================
+
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+
+
+# ============================================================
+# Temporary files
+# ============================================================
+
+tmp/
+temp/
+*.tmp
+*.temp
+
+*.swp
+*.swo
+*~
+
+
+# ============================================================
+# Miscellaneous
+# ============================================================
+
+*.orig
