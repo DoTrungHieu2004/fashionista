@@ -1,4 +1,4 @@
-import { ImageSourcePropType } from 'react-native';
+import { type ImageSourcePropType } from 'react-native';
 
 /**
  * Image assets that render identically in light and dark mode — product

@@ -1,9 +1,9 @@
-import { AppImages } from '@/constants/images';
-import { NeutralColors, SemanticColors, ThemeColors } from '@/constants/theme/colors';
-import { Fonts } from '@/constants/theme/fonts';
-import { Radius } from '@/constants/theme/radius';
-import { Spacing } from '@/constants/theme/spacing';
-import { ThemeImageSet } from '@/constants/theme/themed-images';
+import { type AppImages } from '@/constants/images';
+import { type NeutralColors, type SemanticColors, type ThemeColors } from '@/constants/theme/colors';
+import { type Fonts } from '@/constants/theme/fonts';
+import { type Radius } from '@/constants/theme/radius';
+import { type Spacing } from '@/constants/theme/spacing';
+import { type ThemeImageSet } from '@/constants/theme/themed-images';
 
 /**
  * The user's persisted intent.

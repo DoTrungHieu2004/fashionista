@@ -1,5 +1,6 @@
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 import * as SplashScreen from 'expo-splash-screen';
+
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { AppContent } from '@/AppContent';
 import { ThemeProvider } from '@/theme/ThemeProvider';

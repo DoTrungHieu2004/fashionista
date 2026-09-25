@@ -15,10 +15,12 @@
     "react-native-safe-area-context": "~5.7.0"
   },
   "devDependencies": {
+    "@eslint/compat": "^2.1.1",
     "@types/react": "~19.2.2",
     "eslint": "^10.11.0",
     "eslint-config-expo": "~57.0.2",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react-native": "^5.0.0",
     "eslint-plugin-simple-import-sort": "^14.0.0",
     "eslint-plugin-unused-imports": "^4.4.1",
     "prettier": "^3.9.9",

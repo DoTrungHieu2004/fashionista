@@ -1,12 +1,13 @@
+import { useFonts } from 'expo-font';
+
 import { Inter_400Regular, Inter_500Medium, Inter_600SemiBold } from '@expo-google-fonts/inter';
 import {
   Montserrat_400Regular,
   Montserrat_600SemiBold,
   Montserrat_700Bold,
 } from '@expo-google-fonts/montserrat';
-import { useFonts } from 'expo-font';
 
-import { FontFamily } from '@/constants/theme/fonts';
+import { type FontFamily } from '@/constants/theme/fonts';
 
 /**
  * Every font asset loaded into the app. Keys MUST match the string values

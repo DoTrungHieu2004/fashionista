@@ -1,6 +1,8 @@
 const { defineConfig } = require('eslint/config');
 const expoConfig = require('eslint-config-expo/flat');
+const { fixupPluginRules } = require('@eslint/compat');
 const prettierConfig = require('eslint-config-prettier');
+const reactNative = require('eslint-plugin-react-native');
 const simpleImportSort = require('eslint-plugin-simple-import-sort');
 const unusedImports = require('eslint-plugin-unused-imports');
 
@@ -29,6 +31,7 @@ module.exports = defineConfig([
   {
     files: ['**/*.{ts,tsx}'],
     plugins: {
+      'react-native': fixupPluginRules(reactNative),
       'simple-import-sort': simpleImportSort,
       'unused-imports': unusedImports,
     },
@@ -101,6 +104,11 @@ module.exports = defineConfig([
       'no-var': 'error',
       'object-shorthand': ['warn', 'always'],
     },
+    settings: {
+      react: {
+        version: '19.2.3',
+      },
+    },
   },
 
   // JS config files (no TS rules)
@@ -113,4 +121,9 @@ module.exports = defineConfig([
       'no-undef': 'off',
     },
   },
-]);
+]).map((config) => {
+  if (config.plugins && config.plugins.react) {
+    config.plugins.react = fixupPluginRules(config.plugins.react);
+  }
+  return config;
+});

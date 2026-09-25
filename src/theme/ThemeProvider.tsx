@@ -1,16 +1,17 @@
-import { PropsWithChildren, useCallback, useEffect, useMemo, useState } from 'react';
+import { type PropsWithChildren, useCallback, useEffect, useMemo, useState } from 'react';
 import { useColorScheme } from 'react-native';
+
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import { darkColors, lightColors, neutralColors, semanticColors } from '@/constants/theme/colors';
 import { images } from '@/constants/images';
-import { pickThemedImages } from '@/constants/theme/themed-images';
-import { spacing } from '@/constants/theme/spacing';
-import { radius } from '@/constants/theme/radius';
+import { darkColors, lightColors, neutralColors, semanticColors } from '@/constants/theme/colors';
 import { fonts } from '@/constants/theme/fonts';
+import { radius } from '@/constants/theme/radius';
+import { spacing } from '@/constants/theme/spacing';
+import { pickThemedImages } from '@/constants/theme/themed-images';
 
-import { ThemeContextValue, ThemeMode } from './types';
 import { ThemeContext } from './context';
+import { type ThemeContextValue, type ThemeMode } from './types';
 
 const STORAGE_KEY = '@fashionista/theme-mode';
 const VALID_MODES = ['system', 'light', 'dark'] as const satisfies readonly ThemeMode[];
@@ -60,9 +61,9 @@ export function ThemeProvider({ children }: PropsWithChildren) {
       staticImages: images,
       semantic: semanticColors,
       neutral: neutralColors,
-      spacing: spacing,
-      radius: radius,
-      fonts: fonts,
+      spacing,
+      radius,
+      fonts,
       setMode,
     }),
     [mode, isDark, isReady, setMode],
