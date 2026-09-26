@@ -1,20 +1,22 @@
 import { useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 
 import { useAppFonts } from './hooks/useAppFonts';
+import { RootNavigator } from './navigation/RootNavigator';
 import { useTheme } from './theme/useTheme';
+import { useI18nReady } from './i18n';
 
 /**
  * Everything under the ThemeProvider. Gates on both font + theme
  * hydration, then hides the splash and renders the app.
  */
 export function AppContent() {
-  const { isDark, isReady } = useTheme();
+  const { isDark, isReady: themeReady } = useTheme();
   const [fontsLoaded, fontError] = useAppFonts();
+  const i18nReady = useI18nReady();
 
-  const ready = isReady && (fontsLoaded || fontError != null);
+  const ready = themeReady && i18nReady && (fontsLoaded || fontError != null);
 
   useEffect(() => {
     if (ready) {
@@ -26,19 +28,8 @@ export function AppContent() {
 
   return (
     <>
-      <View style={styles.container}>
-        <Text>Open up App.tsx to start working on your app!</Text>
-        <StatusBar style={isDark ? 'light' : 'dark'} />
-      </View>
+      <StatusBar style={isDark ? 'light' : 'dark'} />
+      <RootNavigator />
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
