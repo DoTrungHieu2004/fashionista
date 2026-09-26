@@ -1,5 +1,9 @@
 import { type AppImages } from '@/constants/images';
-import { type NeutralColors, type SemanticColors, type ThemeColors } from '@/constants/theme/colors';
+import {
+  type NeutralColors,
+  type SemanticColors,
+  type ThemeColors,
+} from '@/constants/theme/colors';
 import { type Fonts } from '@/constants/theme/fonts';
 import { type Radius } from '@/constants/theme/radius';
 import { type Spacing } from '@/constants/theme/spacing';
