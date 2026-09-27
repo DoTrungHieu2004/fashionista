@@ -2,6 +2,7 @@ const { defineConfig } = require('eslint/config');
 const expoConfig = require('eslint-config-expo/flat');
 const { fixupPluginRules } = require('@eslint/compat');
 const prettierConfig = require('eslint-config-prettier');
+const reactHooks = require('eslint-plugin-react-hooks');
 const reactNative = require('eslint-plugin-react-native');
 const simpleImportSort = require('eslint-plugin-simple-import-sort');
 const unusedImports = require('eslint-plugin-unused-imports');
@@ -31,6 +32,7 @@ module.exports = defineConfig([
   {
     files: ['**/*.{ts,tsx}'],
     plugins: {
+      'react-hooks': reactHooks,
       'react-native': fixupPluginRules(reactNative),
       'simple-import-sort': simpleImportSort,
       'unused-imports': unusedImports,
@@ -91,6 +93,9 @@ module.exports = defineConfig([
       'react/jsx-curly-brace-presence': ['warn', { props: 'never', children: 'never' }],
       'react/self-closing-comp': 'warn',
       'react-hooks/exhaustive-deps': 'warn',
+
+      // ---- React Hooks ----
+      'react-hooks/refs': 'error',
 
       // ---- React Native ----
       'react-native/no-inline-styles': 'warn',
