@@ -14,8 +14,11 @@
     "isolatedModules": true,
     "skipLibCheck": true,
     "jsx": "react-jsx",
-    "paths": { "@/*": ["./src/*"] }
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/src-assets/*": ["./src-assets/*"]
+    }
   },
-  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"],
+  "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "dist", ".expo", "ios", "android"]
 }

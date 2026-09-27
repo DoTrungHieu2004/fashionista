@@ -1,1 +1,5 @@
-{}
+{
+  "common": {
+    "copyright": "© {{year}} Fashionista. All rights reserved."
+  }
+}

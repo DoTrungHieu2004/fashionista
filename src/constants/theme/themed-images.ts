@@ -9,11 +9,15 @@ import { type ImageSourcePropType } from 'react-native';
  * this shape via `satisfies`, so adding a key here forces the same key in
  * every other variant.
  */
-const lightImages = {} as const satisfies Record<string, ImageSourcePropType>;
+const lightImages = {
+  logo: require('@/src-assets/logos/fashionista-logo-light.png') as ImageSourcePropType,
+} as const satisfies Record<string, ImageSourcePropType>;
 
 export const themedImages = {
   light: lightImages,
-  dark: {} satisfies typeof lightImages,
+  dark: {
+    logo: require('@/src-assets/logos/fashionista-logo-dark.png'),
+  } satisfies typeof lightImages,
 } as const;
 
 export type ThemedImages = typeof themedImages;
