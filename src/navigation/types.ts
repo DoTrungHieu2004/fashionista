@@ -1,3 +1,4 @@
+import { type CompositeScreenProps, type NavigatorScreenParams } from '@react-navigation/native';
 import { type NativeStackScreenProps } from '@react-navigation/native-stack';
 
 /**
@@ -12,8 +13,24 @@ import { type NativeStackScreenProps } from '@react-navigation/native-stack';
  */
 export type RootStackParamList = {
   Welcome: undefined;
-  Login: undefined;
+  Auth: NavigatorScreenParams<AuthStackParamList>;
 };
+
+/* -------------------------------------------------------------------------- */
+/*  Auth module                                                               */
+/* -------------------------------------------------------------------------- */
+
+export type AuthStackParamList = {
+  Login: undefined;
+  Register: undefined;
+  ForgotPassword: undefined;
+  ResetPassword: { token: string };
+  CompleteProfile: { userId: string };
+};
+
+/* -------------------------------------------------------------------------- */
+/*  Screen-prop helpers                                                       */
+/* -------------------------------------------------------------------------- */
 
 /**
  * Convenience alias for a screen component's props.
@@ -26,6 +43,18 @@ export type RootStackScreenProps<T extends keyof RootStackParamList> = NativeSta
   RootStackParamList,
   T
 >;
+
+export type AuthStackScreenProps<T extends keyof AuthStackParamList> = NativeStackScreenProps<
+  AuthStackParamList,
+  T
+>;
+
+/**
+ * Use when an auth screen needs to reach a **root** route as well
+ * (e.g. `CompleteProfile` calls `navigation.replace('Main')`).
+ */
+export type AuthStackCompositeScreenProps<T extends keyof AuthStackParamList> =
+  CompositeScreenProps<AuthStackScreenProps<T>, RootStackScreenProps<'Auth'>>;
 
 /**
  * Module augmentation — makes `useNavigation()` and `useRoute()`

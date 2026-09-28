@@ -8,6 +8,7 @@ import { useTheme } from '@/theme/useTheme';
 
 import { type RootStackParamList } from './types';
 import { buildNavigationTheme } from './useNavigationTheme';
+import { AuthNavigator } from './navigators/AuthNavigator';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -27,7 +28,7 @@ export function RootNavigator() {
     <NavigationContainer theme={navTheme}>
       <Stack.Navigator initialRouteName="Welcome" screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
-        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Auth" component={AuthNavigator} />
       </Stack.Navigator>
     </NavigationContainer>
   );
