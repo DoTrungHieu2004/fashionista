@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { LANGUAGE_STORAGE_KEY } from '@/constants/i18n';
 
 import { type Language, languageCodes } from './locales/_index';
-import { i18nReady } from '.';
+import { i18nReady } from './instance';
 
 /**
  * Read and change the active language. Persists changes to AsyncStorage.
