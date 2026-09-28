@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { Animated, Easing, Image, StyleSheet, Text, View } from 'react-native';
 
 import { useTranslation } from 'react-i18next';
@@ -14,10 +14,10 @@ export function WelcomeScreen({ navigation }: Props) {
   const { colors, images, fonts, spacing, radius } = useTheme();
   const { t } = useTranslation();
 
-  // Animation values
-  const fadeAnim = useRef(new Animated.Value(0)).current;
-  const slideAnim = useRef(new Animated.Value(20)).current;
-  const progressAnim = useRef(new Animated.Value(0)).current;
+  // Initialize Animated values using useState initializer functions so they are created once
+  const [fadeAnim] = useState(() => new Animated.Value(0));
+  const [slideAnim] = useState(() => new Animated.Value(20));
+  const [progressAnim] = useState(() => new Animated.Value(0));
 
   useEffect(() => {
     // 1. Logo and text entry animation
@@ -44,7 +44,7 @@ export function WelcomeScreen({ navigation }: Props) {
       useNativeDriver: false, // Width animation doesn't support native driver
     }).start(({ finished }) => {
       if (finished) {
-        navigation.replace('Login');
+        navigation.replace('Auth', { screen: 'Login' });
       }
     });
   }, [fadeAnim, slideAnim, progressAnim, navigation]);

@@ -3,12 +3,12 @@ import { useMemo } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { LoginScreen, WelcomeScreen } from '@/screens';
+import { WelcomeScreen } from '@/screens';
 import { useTheme } from '@/theme/useTheme';
 
+import { AuthNavigator } from './navigators/AuthNavigator';
 import { type RootStackParamList } from './types';
 import { buildNavigationTheme } from './useNavigationTheme';
-import { AuthNavigator } from './navigators/AuthNavigator';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
