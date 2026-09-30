@@ -1,5 +1,52 @@
 {
   "common": {
-    "copyright": "© {{year}} Fashionista. Bảo lưu mọi quyền."
+    "copyright": "© {{year}} Fashionista. Bảo lưu mọi quyền.",
+    "divider": "HOẶC TIẾP TỤC VỚI",
+    "titles": {
+      "login": "Chào mừng trở lại",
+      "register": "Tạo tài khoản"
+    },
+    "subtitles": {
+      "login": "Khám phá những xu hướng mới nhất trong làng thời trang cao cấp.",
+      "register": "Hãy tham gia cộng đồng thời trang toàn cầu của chúng tôi và khám phá các bộ sưu tập được tuyển chọn kỹ lưỡng."
+    }
+  },
+  "labels": {
+    "email-address": "Địa chỉ email",
+    "password": "Mật khẩu",
+    "confirm-password": "Xác nhận mật khẩu"
+  },
+  "buttons": {
+    "login": "Đăng nhập",
+    "register": "Đăng ký"
+  },
+  "links": {
+    "forgot-password": "Quên mật khẩu?",
+    "register": "Không có tài khoản? <0>Đăng ký</0>",
+    "terms": "Khi đăng ký, tôi đồng ý với <0>Điều khoản Dịch vụ</0> và <1>Chính sách Bảo mật</1> của Fashionista."
+  },
+  "validation": {
+    "missingEmail": {
+      "title": "Thiếu email",
+      "message": "Vui lòng nhập địa chỉ email của bạn."
+    },
+    "invalidEmail": {
+      "title": "Email không hợp lệ",
+      "message": "Vui lòng nhập một địa chỉ email hợp lệ.",
+      "message-2": "Vui lòng nhập một địa chỉ email hợp lệ."
+    },
+    "missingPassword": {
+      "title": "Thiếu mật khẩu",
+      "message": "Vui lòng nhập mật khẩu của bạn.",
+      "message-2": "Vui lòng nhập mật khẩu."
+    },
+    "passwordMismatch": {
+      "title": "Mật khẩu không trùng khớp",
+      "message": "Cả hai mật khẩu không trùng khớp."
+    },
+    "termsRequired": {
+      "title": "Các điều khoản bắt buộc",
+      "message": "Vui lòng đồng ý với Điều khoản Dịch vụ và Chính sách Bảo mật."
+    }
   }
 }

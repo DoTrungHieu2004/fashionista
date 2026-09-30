@@ -1,5 +1,52 @@
 {
   "common": {
-    "copyright": "© {{year}} Fashionista. All rights reserved."
+    "copyright": "© {{year}} Fashionista. All rights reserved.",
+    "divider": "OR CONTINUE WITH",
+    "titles": {
+      "login": "Welcome back",
+      "register": "Create account"
+    },
+    "subtitles": {
+      "login": "Discover the latest trends in luxury fashion.",
+      "register": "Join our global fashion community and discover curated collections."
+    }
+  },
+  "labels": {
+    "email-address": "Email address",
+    "password": "Password",
+    "confirm-password": "Confirm password"
+  },
+  "buttons": {
+    "login": "Login",
+    "register": "Register"
+  },
+  "links": {
+    "forgot-password": "Forgot password?",
+    "register": "Don't have an account? <0>Register</0>",
+    "terms": "By registering, I agree to Fashionista's <0>Terms of Service</0> and <1>Privacy Policy</1>."
+  },
+  "validation": {
+    "missingEmail": {
+      "title": "Missing email",
+      "message": "Please enter your email address."
+    },
+    "invalidEmail": {
+      "title": "Invalid email",
+      "message": "Please enter a valid email address.",
+      "message-2": "Please enter a valid email address."
+    },
+    "missingPassword": {
+      "title": "Missing password",
+      "message": "Please enter your password.",
+      "message-2": "Please enter a password."
+    },
+    "passwordMismatch": {
+      "title": "Password mismatch",
+      "message": "Passwords do not match."
+    },
+    "termsRequired": {
+      "title": "Terms required",
+      "message": "Please agree to the Terms of Service and Privacy Policy."
+    }
   }
 }

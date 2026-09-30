@@ -11,12 +11,14 @@ import { type ImageSourcePropType } from 'react-native';
  */
 const lightImages = {
   logo: require('@/src-assets/logos/fashionista-logo-light.png') as ImageSourcePropType,
+  gradientBackground: require('@/src-assets/background/gradient-light.png') as ImageSourcePropType,
 } as const satisfies Record<string, ImageSourcePropType>;
 
 export const themedImages = {
   light: lightImages,
   dark: {
     logo: require('@/src-assets/logos/fashionista-logo-dark.png'),
+    gradientBackground: require('@/src-assets/background/gradient-dark.png'),
   } satisfies typeof lightImages,
 } as const;
 

@@ -9,7 +9,11 @@ import { type ImageSourcePropType } from 'react-native';
  * import { images } from '@/constants/images';
  * <Image source={images.placeholder} style={{ width: 80, height: 80 }} />
  */
-export const images = {} as const;
+export const images = {
+  googleIcon: require('@/src-assets/icons/google.png') as ImageSourcePropType,
+  facebookIcon: require('@/src-assets/icons/facebook.png') as ImageSourcePropType,
+  appleIcon: require('@/src-assets/icons/apple.png') as ImageSourcePropType,
+} as const;
 
 export type Images = { [K in keyof typeof images]: ImageSourcePropType };
 

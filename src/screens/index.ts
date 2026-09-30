@@ -12,3 +12,4 @@ export { WelcomeScreen } from './welcome/WelcomeScreen';
 
 // Auth
 export { LoginScreen } from './auth/LoginScreen';
+export { RegisterScreen } from './auth/RegisterScreen';
