@@ -16,6 +16,8 @@ import { Trans, useTranslation } from 'react-i18next';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { AuthInput } from '@/components/auth/AuthInput';
+import { PasswordConditionsBox } from '@/components/auth/PasswordConditionsBox';
+import { PasswordRulesDialog } from '@/components/auth/PasswordRulesDialog';
 import { CustomAlert } from '@/components/CustomAlert';
 import { fonts } from '@/constants/theme/fonts';
 import { type AuthStackScreenProps } from '@/navigation/types';
@@ -35,6 +37,7 @@ export function RegisterScreen({ navigation }: Props) {
   const [agreed, setAgreed] = useState(false);
   const [alertVisible, setAlertVisible] = useState(false);
   const [alertData, setAlertData] = useState({ title: '', message: '' });
+  const [rulesVisible, setRulesVisible] = useState(false);
 
   const showAlert = (title: string, message: string) => {
     setAlertData({ title, message });
@@ -47,18 +50,18 @@ export function RegisterScreen({ navigation }: Props) {
     if (!email || !emailRegex.test(email)) {
       return showAlert(t('validation.invalidEmail.title'), t('validation.invalidEmail.message-2'));
     }
-    if (!password) {
+
+    const hasMinLength = password.length >= 8;
+    const hasSpecialOrNum = /[0-9!@#$%^&*]/.test(password);
+    const passwordsMatch = password === confirmPassword && password.length > 0;
+
+    if (!hasMinLength || !hasSpecialOrNum || !passwordsMatch) {
       return showAlert(
-        t('validation.missingPassword.title'),
-        t('validation.missingPassword.message-2'),
+        t('validation.invalidPassword.title'),
+        t('validation.invalidPassword.message'),
       );
     }
-    if (password !== confirmPassword) {
-      return showAlert(
-        t('validation.passwordMismatch.title'),
-        t('validation.passwordMismatch.message'),
-      );
-    }
+
     if (!agreed) {
       return showAlert(t('validation.termsRequired.title'), t('validation.termsRequired.message'));
     }
@@ -133,6 +136,8 @@ export function RegisterScreen({ navigation }: Props) {
             isPassword
             value={password}
             onChangeText={setPassword}
+            rightLinkText={t('links.password-rules')}
+            onRightLinkPress={() => setRulesVisible(true)}
           />
 
           <AuthInput
@@ -142,6 +147,8 @@ export function RegisterScreen({ navigation }: Props) {
             value={confirmPassword}
             onChangeText={setConfirmPassword}
           />
+
+          <PasswordConditionsBox password={password} confirmPassword={confirmPassword} />
 
           {/* Terms checkbox */}
           <View style={[styles.checkboxContainer, { marginBottom: spacing.lg }]}>
@@ -254,6 +261,8 @@ export function RegisterScreen({ navigation }: Props) {
         message={alertData.message}
         onClose={() => setAlertVisible(false)}
       />
+
+      <PasswordRulesDialog visible={rulesVisible} onClose={() => setRulesVisible(false)} />
     </SafeAreaView>
   );
 }

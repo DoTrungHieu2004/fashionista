@@ -144,7 +144,7 @@ export function LoginScreen({ navigation }: Props) {
                 value={password}
                 onChangeText={setPassword}
                 rightLinkText={t('links.forgot-password')}
-                onRightLinkPress={() => console.log('Forgot password pressed')}
+                onRightLinkPress={() => navigation.navigate('ForgotPassword')}
               />
 
               <TouchableOpacity

@@ -2,28 +2,54 @@
   "common": {
     "copyright": "© {{year}} Fashionista. Bảo lưu mọi quyền.",
     "divider": "HOẶC TIẾP TỤC VỚI",
+    "passwordStrength": "ĐỘ MẠNH: {{strength}}",
+    "havingTrouble": "Bạn đang gặp vấn đề?",
     "titles": {
       "login": "Chào mừng trở lại",
-      "register": "Tạo tài khoản"
+      "register": "Tạo tài khoản",
+      "forgot-password": "Quên mật khẩu",
+      "reset-password": "Đặt lại mật khẩu"
     },
     "subtitles": {
       "login": "Khám phá những xu hướng mới nhất trong làng thời trang cao cấp.",
-      "register": "Hãy tham gia cộng đồng thời trang toàn cầu của chúng tôi và khám phá các bộ sưu tập được tuyển chọn kỹ lưỡng."
+      "register": "Hãy tham gia cộng đồng thời trang toàn cầu của chúng tôi và khám phá các bộ sưu tập được tuyển chọn kỹ lưỡng.",
+      "forgot-password": "Hãy nhập địa chỉ email liên kết với tài khoản của bạn và chúng tôi sẽ gửi cho bạn một liên kết để đặt lại mật khẩu.",
+      "reset-password": "Hãy chọn một mật khẩu mạnh và độc đáo để bảo vệ kho lưu trữ thời trang của bạn."
+    },
+    "passwordConditions": {
+      "8-chars": "Ít nhất 8 ký tự",
+      "1-num-or-spec": "Một số hoặc ký tự đặc biệt",
+      "match": "Cả 2 mật khẩu trùng khớp"
     }
   },
   "labels": {
     "email-address": "Địa chỉ email",
     "password": "Mật khẩu",
-    "confirm-password": "Xác nhận mật khẩu"
+    "confirm-password": "Xác nhận mật khẩu",
+    "new-password": "Mật khẩu mới"
   },
   "buttons": {
     "login": "Đăng nhập",
-    "register": "Đăng ký"
+    "register": "Đăng ký",
+    "send-reset-link": "Gửi link",
+    "reset-password": "Đặt lại mật khẩu",
+    "got-it": "Đã rõ",
+    "go-to-login": "Đăng nhập"
   },
   "links": {
     "forgot-password": "Quên mật khẩu?",
     "register": "Không có tài khoản? <0>Đăng ký</0>",
-    "terms": "Khi đăng ký, tôi đồng ý với <0>Điều khoản Dịch vụ</0> và <1>Chính sách Bảo mật</1> của Fashionista."
+    "terms": "Khi đăng ký, tôi đồng ý với <0>Điều khoản Dịch vụ</0> và <1>Chính sách Bảo mật</1> của Fashionista.",
+    "contact-support": "Liên hệ bộ phận hỗ trợ của Fashionista",
+    "password-rules": "Quy tắc"
+  },
+  "enum": {
+    "passwordStrength": {
+      "none": "KHÔNG",
+      "weak": "YẾU",
+      "medium": "BÌNH THƯỜNG",
+      "strong": "MẠNH"
+    }
   },
   "validation": {
     "missingEmail": {
@@ -34,6 +60,10 @@
       "title": "Email không hợp lệ",
       "message": "Vui lòng nhập một địa chỉ email hợp lệ.",
       "message-2": "Vui lòng nhập một địa chỉ email hợp lệ."
+    },
+    "invalidPassword": {
+      "title": "Mật khẩu không hợp lệ",
+      "message": "Vui lòng đảm bảo đáp ứng tất cả các yêu cầu về mật khẩu."
     },
     "missingPassword": {
       "title": "Thiếu mật khẩu",
@@ -47,6 +77,19 @@
     "termsRequired": {
       "title": "Các điều khoản bắt buộc",
       "message": "Vui lòng đồng ý với Điều khoản Dịch vụ và Chính sách Bảo mật."
+    }
+  },
+  "dialogs": {
+    "passwordRules": {
+      "title": "Quy tắc đặt mật khẩu",
+      "message": "Để đảm bảo an toàn cho tài khoản, mật khẩu của bạn phải đáp ứng các tiêu chí sau:",
+      "rule-1": "• Dài ít nhất 8 ký tự",
+      "rule-2": "• Chứa ít nhất một chữ số hoặc ký tự đặc biệt",
+      "rule-3": "• Mật khẩu phải khớp nhau"
+    },
+    "passwordResetSuccess": {
+      "title": "Đặt lại mật khẩu thành công",
+      "message": "Mật khẩu của bạn đã được cập nhật thành công. Giờ đây, bạn có thể đăng nhập bằng thông tin đăng nhập mới."
     }
   }
 }

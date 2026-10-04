@@ -13,6 +13,8 @@ export const images = {
   googleIcon: require('@/src-assets/icons/google.png') as ImageSourcePropType,
   facebookIcon: require('@/src-assets/icons/facebook.png') as ImageSourcePropType,
   appleIcon: require('@/src-assets/icons/apple.png') as ImageSourcePropType,
+  heroForgotPassImage: require('@/src-assets/heroes/forgot_pass_hero.png') as ImageSourcePropType,
+  heroResetPassImage: require('@/src-assets/heroes/reset_pass_hero.png') as ImageSourcePropType,
 } as const;
 
 export type Images = { [K in keyof typeof images]: ImageSourcePropType };

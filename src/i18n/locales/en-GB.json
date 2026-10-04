@@ -2,28 +2,54 @@
   "common": {
     "copyright": "© {{year}} Fashionista. All rights reserved.",
     "divider": "OR CONTINUE WITH",
+    "passwordStrength": "STRENGTH: {{strength}}",
+    "havingTrouble": "Having trouble?",
     "titles": {
       "login": "Welcome back",
-      "register": "Create account"
+      "register": "Create account",
+      "forgot-password": "Forgot password",
+      "reset-password": "Reset password"
     },
     "subtitles": {
       "login": "Discover the latest trends in luxury fashion.",
-      "register": "Join our global fashion community and discover curated collections."
+      "register": "Join our global fashion community and discover curated collections.",
+      "forgot-password": "Enter the email address associated with your account and we'll send you a link to reset your password.",
+      "reset-password": "Choose a strong, unique password to keep your fashion vault secure."
+    },
+    "passwordConditions": {
+      "8-chars": "At least 8 characters",
+      "1-num-or-spec": "One number or special character",
+      "match": "Passwords match"
     }
   },
   "labels": {
     "email-address": "Email address",
     "password": "Password",
-    "confirm-password": "Confirm password"
+    "confirm-password": "Confirm password",
+    "new-password": "New password"
   },
   "buttons": {
     "login": "Login",
-    "register": "Register"
+    "register": "Register",
+    "send-reset-link": "Send reset link",
+    "reset-password": "Reset password",
+    "got-it": "Got it",
+    "go-to-login": "Go to login"
   },
   "links": {
     "forgot-password": "Forgot password?",
     "register": "Don't have an account? <0>Register</0>",
-    "terms": "By registering, I agree to Fashionista's <0>Terms of Service</0> and <1>Privacy Policy</1>."
+    "terms": "By registering, I agree to Fashionista's <0>Terms of Service</0> and <1>Privacy Policy</1>.",
+    "contact-support": "Contact Fashionista support",
+    "password-rules": "Rules"
+  },
+  "enum": {
+    "passwordStrength": {
+      "none": "NONE",
+      "weak": "WEAK",
+      "medium": "MEDIUM",
+      "strong": "STRONG"
+    }
   },
   "validation": {
     "missingEmail": {
@@ -34,6 +60,10 @@
       "title": "Invalid email",
       "message": "Please enter a valid email address.",
       "message-2": "Please enter a valid email address."
+    },
+    "invalidPassword": {
+      "title": "Invalid password",
+      "message": "Please ensure all password conditions are met."
     },
     "missingPassword": {
       "title": "Missing password",
@@ -47,6 +77,19 @@
     "termsRequired": {
       "title": "Terms required",
       "message": "Please agree to the Terms of Service and Privacy Policy."
+    }
+  },
+  "dialogs": {
+    "passwordRules": {
+      "title": "Password rules",
+      "message": "To keep your account secure, your password must meet the following criteria:",
+      "rule-1": "• At least 8 characters long",
+      "rule-2": "• Contains at least one number or special character",
+      "rule-3": "• Passwords must match"
+    },
+    "passwordResetSuccess": {
+      "title": "Password reset successful",
+      "message": "Your password has been successfully updated. You can now log in with your new credentials."
     }
   }
 }
