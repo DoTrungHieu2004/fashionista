@@ -15,6 +15,7 @@ export const images = {
   appleIcon: require('@/src-assets/icons/apple.png') as ImageSourcePropType,
   heroForgotPassImage: require('@/src-assets/heroes/forgot_pass_hero.png') as ImageSourcePropType,
   heroResetPassImage: require('@/src-assets/heroes/reset_pass_hero.png') as ImageSourcePropType,
+  defaultAvatar: require('@/src-assets/default_avatar.png') as ImageSourcePropType,
 } as const;
 
 export type Images = { [K in keyof typeof images]: ImageSourcePropType };

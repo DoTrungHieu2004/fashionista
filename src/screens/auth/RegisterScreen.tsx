@@ -68,6 +68,10 @@ export function RegisterScreen({ navigation }: Props) {
 
     // Proceed with registration logic
     console.log('Register:', { email, password });
+
+    // Mock user ID and navigate to Complete Profile
+    const mockUserId = 'user_12345';
+    navigation.navigate('CompleteProfile', { userId: mockUserId });
   };
 
   return (

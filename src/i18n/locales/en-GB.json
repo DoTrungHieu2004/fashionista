@@ -8,13 +8,17 @@
       "login": "Welcome back",
       "register": "Create account",
       "forgot-password": "Forgot password",
-      "reset-password": "Reset password"
+      "reset-password": "Reset password",
+      "complete-profile": "Complete your profile"
     },
     "subtitles": {
       "login": "Discover the latest trends in luxury fashion.",
       "register": "Join our global fashion community and discover curated collections.",
       "forgot-password": "Enter the email address associated with your account and we'll send you a link to reset your password.",
       "reset-password": "Choose a strong, unique password to keep your fashion vault secure."
+    },
+    "helpers": {
+      "display-name": "This is how you'll appear to other fashionistas."
     },
     "passwordConditions": {
       "8-chars": "At least 8 characters",
@@ -26,7 +30,18 @@
     "email-address": "Email address",
     "password": "Password",
     "confirm-password": "Confirm password",
-    "new-password": "New password"
+    "new-password": "New password",
+    "upload-avatar": "UPLOAD PROFILE PHOTO",
+    "first-name": "First name",
+    "last-name": "Last name",
+    "display-name": "Display name",
+    "dob": "Date of birth",
+    "gender": "Gender",
+    "select": "Select"
+  },
+  "placeholders": {
+    "first-name": "Enter your first name",
+    "last-name": "Enter your last name"
   },
   "buttons": {
     "login": "Login",
@@ -34,7 +49,10 @@
     "send-reset-link": "Send reset link",
     "reset-password": "Reset password",
     "got-it": "Got it",
-    "go-to-login": "Go to login"
+    "go-to-login": "Go to login",
+    "done": "Done",
+    "cancel": "Cancel",
+    "continue": "Continue"
   },
   "links": {
     "forgot-password": "Forgot password?",
@@ -49,6 +67,12 @@
       "weak": "WEAK",
       "medium": "MEDIUM",
       "strong": "STRONG"
+    },
+    "genders": {
+      "male": "Male",
+      "female": "Female",
+      "non-binary": "Non-binary",
+      "prefer-not-to-say": "Prefer not to say"
     }
   },
   "validation": {
@@ -77,6 +101,19 @@
     "termsRequired": {
       "title": "Terms required",
       "message": "Please agree to the Terms of Service and Privacy Policy."
+    },
+    "missingField": {
+      "title": "Missing field",
+      "first-name-required": "First name is required.",
+      "display-name-required": "Display name is required.",
+      "dob-required": "Date of birth is required.",
+      "gender-required": "Please select a gender."
+    }
+  },
+  "checkboxes": {
+    "personalisedRecommendations": {
+      "title": "Personalised recommendations",
+      "subtitle": "Send me fashion trends and exclusive early access offers."
     }
   },
   "dialogs": {
@@ -90,6 +127,24 @@
     "passwordResetSuccess": {
       "title": "Password reset successful",
       "message": "Your password has been successfully updated. You can now log in with your new credentials."
+    },
+    "permissionRequired": {
+      "title": "Permission required",
+      "media-access": {
+        "message": "Please allow access to your {{media}}.",
+        "camera": "camera",
+        "photos": "photos"
+      }
+    }
+  },
+  "bottomSheets": {
+    "avatarChoice": {
+      "title": "Profile photo",
+      "option-1": "Take photo",
+      "option-2": "Choose from library"
+    },
+    "genderChoice": {
+      "title": "Select gender"
     }
   }
 }

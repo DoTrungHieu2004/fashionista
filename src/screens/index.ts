@@ -11,6 +11,7 @@
 export { WelcomeScreen } from './welcome/WelcomeScreen';
 
 // Auth
+export { CompleteProfileScreen } from './auth/CompleteProfileScreen';
 export { ForgotPasswordScreen } from './auth/ForgotPasswordScreen';
 export { LoginScreen } from './auth/LoginScreen';
 export { RegisterScreen } from './auth/RegisterScreen';

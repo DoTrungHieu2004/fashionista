@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import {
   StyleSheet,
   Text,
@@ -17,6 +17,7 @@ interface AuthInputProps extends TextInputProps {
   isPassword?: boolean;
   rightLinkText?: string;
   onRightLinkPress?: () => void;
+  rightIcon?: React.ReactNode;
 }
 
 export function AuthInput({
@@ -24,6 +25,7 @@ export function AuthInput({
   isPassword,
   rightLinkText,
   onRightLinkPress,
+  rightIcon,
   ...props
 }: AuthInputProps) {
   const { colors, spacing, radius, fonts } = useTheme();
@@ -65,15 +67,16 @@ export function AuthInput({
           secureTextEntry={isPassword && !showPassword}
           {...props}
         />
-        {isPassword && (
-          <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
-            <Feather
-              name={showPassword ? 'eye' : 'eye-off'}
-              size={20}
-              color={colors.onSurfaceVariant}
-            />
+        {rightIcon ? (
+          <View style={styles.iconContainer}>{rightIcon}</View>
+        ) : isPassword ? (
+          <TouchableOpacity
+            onPress={() => setShowPassword(!showPassword)}
+            style={styles.iconContainer}
+          >
+            <Feather name={showPassword ? 'eye' : 'eye-off'} size={20} color={colors.outline} />
           </TouchableOpacity>
-        )}
+        ) : null}
       </View>
     </View>
   );
@@ -85,5 +88,6 @@ const styles = StyleSheet.create({
   label: { fontSize: 12, lineHeight: 16, letterSpacing: 0.6 },
   rightLink: { fontSize: 12, lineHeight: 16, letterSpacing: 0.6 },
   inputContainer: { flexDirection: 'row', alignItems: 'center', borderWidth: 1, height: 48 },
+  iconContainer: { width: 24, height: 24, justifyContent: 'center' },
   input: { flex: 1, fontSize: 16, height: '100%' },
 });
