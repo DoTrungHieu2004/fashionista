@@ -6,6 +6,8 @@ import { AppContent } from '@/AppContent';
 import { I18nProvider } from '@/i18n/I18nProvider';
 import { ThemeProvider } from '@/theme/ThemeProvider';
 
+import 'react-native-reanimated';
+
 // Must be called at module scope, before the first render.
 SplashScreen.preventAutoHideAsync();
 

@@ -14,10 +14,11 @@ import { type NativeStackScreenProps } from '@react-navigation/native-stack';
 export type RootStackParamList = {
   Welcome: undefined;
   Auth: NavigatorScreenParams<AuthStackParamList>;
+  Main: undefined;
 };
 
 /* -------------------------------------------------------------------------- */
-/*  Auth module                                                               */
+/*  Modules                                                                   */
 /* -------------------------------------------------------------------------- */
 
 export type AuthStackParamList = {
@@ -26,6 +27,14 @@ export type AuthStackParamList = {
   ForgotPassword: undefined;
   ResetPassword: { token: string };
   CompleteProfile: { userId: string };
+};
+
+export type MainTabParamList = {
+  Home: undefined;
+  Mall: undefined;
+  Wishlist: undefined;
+  Orders: undefined;
+  Profile: undefined;
 };
 
 /* -------------------------------------------------------------------------- */
@@ -48,6 +57,8 @@ export type AuthStackScreenProps<T extends keyof AuthStackParamList> = NativeSta
   AuthStackParamList,
   T
 >;
+
+export type MainTabKey = keyof MainTabParamList;
 
 /**
  * Use when an auth screen needs to reach a **root** route as well

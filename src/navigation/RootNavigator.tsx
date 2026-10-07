@@ -7,6 +7,7 @@ import { WelcomeScreen } from '@/screens';
 import { useTheme } from '@/theme/useTheme';
 
 import { AuthNavigator } from './navigators/AuthNavigator';
+import { MainTabs } from './MainTabs';
 import { type RootStackParamList } from './types';
 import { buildNavigationTheme } from './useNavigationTheme';
 
@@ -29,6 +30,7 @@ export function RootNavigator() {
       <Stack.Navigator initialRouteName="Welcome" screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="Auth" component={AuthNavigator} />
+        <Stack.Screen name="Main" component={MainTabs} />
       </Stack.Navigator>
     </NavigationContainer>
   );

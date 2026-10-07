@@ -21,12 +21,12 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { AuthInput } from '@/components/auth/AuthInput';
 import { CustomAlert } from '@/components/CustomAlert';
 import { DateInput } from '@/components/DateInput';
-import { type AuthStackScreenProps } from '@/navigation/types';
+import { type AuthStackCompositeScreenProps } from '@/navigation/types';
 import { useTheme } from '@/theme/useTheme';
 
 import { authStyles } from './authStyles';
 
-type Props = AuthStackScreenProps<'CompleteProfile'>;
+type Props = AuthStackCompositeScreenProps<'CompleteProfile'>;
 
 export function CompleteProfileScreen({ route, navigation }: Props) {
   const { colors, neutral, fonts, spacing, radius, staticImages } = useTheme();
@@ -132,6 +132,8 @@ export function CompleteProfileScreen({ route, navigation }: Props) {
       gender,
       recommendations,
     });
+
+    navigation.replace('Main');
   };
 
   return (

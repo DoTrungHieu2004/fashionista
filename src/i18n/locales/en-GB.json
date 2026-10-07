@@ -4,6 +4,13 @@
     "divider": "OR CONTINUE WITH",
     "passwordStrength": "STRENGTH: {{strength}}",
     "havingTrouble": "Having trouble?",
+    "navs": {
+      "home": "Home",
+      "mall": "Mall",
+      "wishlist": "Wishlist",
+      "orders": "Orders",
+      "profile": "Profile"
+    },
     "titles": {
       "login": "Welcome back",
       "register": "Create account",

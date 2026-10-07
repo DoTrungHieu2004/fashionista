@@ -16,13 +16,13 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { AuthInput } from '@/components/auth/AuthInput';
 import { CustomAlert } from '@/components/CustomAlert';
-import { type AuthStackScreenProps } from '@/navigation/types';
+import { type AuthStackCompositeScreenProps } from '@/navigation/types';
 import { useTheme } from '@/theme/useTheme';
 import { withOpacity } from '@/utils/color';
 
 import { authStyles } from './authStyles';
 
-type Props = AuthStackScreenProps<'Login'>;
+type Props = AuthStackCompositeScreenProps<'Login'>;
 
 export function LoginScreen({ navigation }: Props) {
   const { colors, neutral, images, staticImages, spacing, radius, fonts } = useTheme();
@@ -56,6 +56,7 @@ export function LoginScreen({ navigation }: Props) {
 
     // Proceed with login logic
     console.log('Login:', { email, password });
+    navigation.replace('Main');
   };
 
   return (

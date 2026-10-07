@@ -4,6 +4,13 @@
     "divider": "HOẶC TIẾP TỤC VỚI",
     "passwordStrength": "ĐỘ MẠNH: {{strength}}",
     "havingTrouble": "Bạn đang gặp vấn đề?",
+    "navs": {
+      "home": "Trang chủ",
+      "mall": "Gian hàng",
+      "wishlist": "Yêu thích",
+      "orders": "Đơn hàng",
+      "profile": "Cá nhân"
+    },
     "titles": {
       "login": "Chào mừng trở lại",
       "register": "Tạo tài khoản",
