@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { BottomTabBar } from '@/components/navigation/BottomTabBar';
 import { DEFAULT_TAB, TABS } from '@/constants/tabs';
-import { PlaceholderScreen } from '@/screens/placeholder/PlaceholderScreen';
 import { useTheme } from '@/theme/useTheme';
+
+import { TAB_REGISTRY } from './tabRegistry';
+import { type MainTabKey } from './types';
 
 /**
  * Mounted by the root stack as the `Main` route.
@@ -17,11 +19,23 @@ import { useTheme } from '@/theme/useTheme';
 export function MainTabs() {
   const { colors } = useTheme();
   const [activeTab, setActiveTab] = useState(DEFAULT_TAB);
+  const [visited, setVisited] = useState<ReadonlySet<MainTabKey>>(() => new Set([DEFAULT_TAB]));
+
+  useEffect(() => {
+    setVisited((prev) => {
+      if (prev.has(activeTab)) return prev;
+      const next = new Set(prev);
+      next.add(activeTab);
+      return next;
+    });
+  }, [activeTab]);
 
   return (
     <View style={[styles.root, { backgroundColor: colors.background }]}>
       <View style={styles.content}>
         {TABS.map((tab) => {
+          if (!visited.has(tab.key)) return null;
+          const Screen = TAB_REGISTRY[tab.key];
           const active = tab.key === activeTab;
 
           return (
@@ -33,7 +47,7 @@ export function MainTabs() {
               importantForAccessibility={active ? 'auto' : 'no-hide-descendants'}
               pointerEvents={active ? 'auto' : 'none'}
             >
-              <PlaceholderScreen tabKey={tab.key} />
+              <Screen />
             </View>
           );
         })}
