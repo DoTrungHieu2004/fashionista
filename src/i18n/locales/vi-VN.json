@@ -46,9 +46,20 @@
     "gender": "Giới tính",
     "select": "Chọn"
   },
+  "accessibilityLabels": {
+    "ai-assistant": "Trợ lý AI",
+    "notifications": "Thông báo",
+    "unread-notifications": "Bạn có những thông báo chưa đọc",
+    "profile-avatar": "Hồ sơ",
+    "visual-search": "Tìm kiếm bằng hình ảnh",
+    "filter": "Lọc và sắp xếp",
+    "add-to-wishlist": "Thêm vào danh sách yêu thích",
+    "remove-from-wishlist": "Xóa khỏi danh sách yêu thích"
+  },
   "placeholders": {
     "first-name": "Nhập tên chính của bạn",
-    "last-name": "Nhập tên họ của bạn"
+    "last-name": "Nhập tên họ của bạn",
+    "search": "Tìm kiếm sản phẩm, thương hiệu,..."
   },
   "buttons": {
     "login": "Đăng nhập",
@@ -59,7 +70,9 @@
     "go-to-login": "Đăng nhập",
     "done": "Xong",
     "cancel": "Hủy",
-    "continue": "Tiếp tục"
+    "continue": "Tiếp tục",
+    "view-all": "Xem tất cả",
+    "explore": "Khám phá"
   },
   "links": {
     "forgot-password": "Quên mật khẩu?",
@@ -152,6 +165,36 @@
     },
     "genderChoice": {
       "title": "Chọn giới tính"
+    }
+  },
+  "mainTabs": {
+    "home": {
+      "greetings": {
+        "morning": "Chào buổi sáng",
+        "afternoon": "Chào buổi chiều",
+        "evening": "Chào buổi tối"
+      },
+      "titles": {
+        "curated-for-you": "Được tuyển chọn dành riêng cho bạn",
+        "just-for-you": "Dành riêng cho bạn",
+        "your-personal-edit": "Tuyển tập thời trang dành riêng cho bạn",
+        "style-inspiration": "Cảm hứng phong cách",
+        "trending-picks": "Lựa chọn thịnh hành"
+      },
+      "sectionTitles": {
+        "categories": "Thể loại",
+        "picked-for-you": "Được chọn cho bạn",
+        "trending-now": "Đang thịnh hành"
+      },
+      "subtitles": {
+        "picked-for-you": "Dựa trên các tùy chọn phong cách gần đây của bạn"
+      },
+      "shortcuts": {
+        "new-arrivals": "Hàng mới về",
+        "trending-now": "Đang thịnh hành",
+        "best-sellers": "Bán chạy nhất",
+        "recently-viewed": "Đã xem"
+      }
     }
   }
 }

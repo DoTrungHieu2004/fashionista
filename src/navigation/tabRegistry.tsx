@@ -1,5 +1,6 @@
 import { type ComponentType } from 'react';
 
+import { HomeScreen } from '@/screens';
 import { PlaceholderScreen } from '@/screens/placeholder/PlaceholderScreen';
 
 import { type MainTabKey } from './types';
@@ -11,7 +12,7 @@ import { type MainTabKey } from './types';
  * `MainTabParamList` without registering a screen here is a compile error.
  */
 export const TAB_REGISTRY: Record<MainTabKey, ComponentType> = {
-  Home: () => <PlaceholderScreen tabKey="Home" />,
+  Home: HomeScreen,
   Mall: () => <PlaceholderScreen tabKey="Mall" />,
   Wishlist: () => <PlaceholderScreen tabKey="Wishlist" />,
   Orders: () => <PlaceholderScreen tabKey="Orders" />,

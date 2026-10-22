@@ -46,9 +46,20 @@
     "gender": "Gender",
     "select": "Select"
   },
+  "accessibilityLabels": {
+    "ai-assistant": "AI assistant",
+    "notifications": "Notifications",
+    "unread-notifications": "You have unread notifications",
+    "profile-avatar": "Profile",
+    "visual-search": "Visual search",
+    "filter": "Filter and sort",
+    "add-to-wishlist": "Add to wishlist",
+    "remove-from-wishlist": "Remove from wishlist"
+  },
   "placeholders": {
     "first-name": "Enter your first name",
-    "last-name": "Enter your last name"
+    "last-name": "Enter your last name",
+    "search": "Search products, brands,..."
   },
   "buttons": {
     "login": "Login",
@@ -59,7 +70,9 @@
     "go-to-login": "Go to login",
     "done": "Done",
     "cancel": "Cancel",
-    "continue": "Continue"
+    "continue": "Continue",
+    "view-all": "View all",
+    "explore": "Explore"
   },
   "links": {
     "forgot-password": "Forgot password?",
@@ -152,6 +165,36 @@
     },
     "genderChoice": {
       "title": "Select gender"
+    }
+  },
+  "mainTabs": {
+    "home": {
+      "greetings": {
+        "morning": "Good morning",
+        "afternoon": "Good afternoon",
+        "evening": "Good evening"
+      },
+      "titles": {
+        "curated-for-you": "Curated for you",
+        "just-for-you": "Just for you",
+        "your-personal-edit": "Your personal edit",
+        "style-inspiration": "Style inspiration",
+        "trending-picks": "Trending picks"
+      },
+      "sectionTitles": {
+        "categories": "Categories",
+        "picked-for-you": "Picked for you",
+        "trending-now": "Trending now"
+      },
+      "subtitles": {
+        "picked-for-you": "Based on your recent styling preferences"
+      },
+      "shortcuts": {
+        "new-arrivals": "New arrivals",
+        "trending-now": "Trending now",
+        "best-sellers": "Best sellers",
+        "recently-viewed": "Recently viewed"
+      }
     }
   }
 }
